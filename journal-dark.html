@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>wndrly Journey | Autumn in Kyoto</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #09090b;
+            color: #e5e1e4;
+            overflow-x: hidden;
+        }
+        .editorial-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+        .editorial-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .editorial-scroll::-webkit-scrollbar-thumb {
+            background: #27272a;
+        }
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 40px;
+        }
+        .timeline-line {
+            position: absolute;
+            left: -40px;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, #ffffff10 10%, #ffffff10 90%, transparent);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#e5e1e4",
+                    "on-surface": "#e5e1e4",
+                    "inverse-on-surface": "#313032",
+                    "secondary-fixed-dim": "#c8c5ca",
+                    "surface-container-low": "#1c1b1d",
+                    "surface-container-high": "#2a2a2c",
+                    "outline": "#a68a86",
+                    "on-tertiary-container": "#323235",
+                    "on-primary-fixed": "#410001",
+                    "on-tertiary-fixed-variant": "#47464a",
+                    "on-surface-variant": "#dfbfbb",
+                    "surface-bright": "#39393b",
+                    "on-primary": "#670304",
+                    "on-background": "#e5e1e4",
+                    "surface-container-highest": "#353437",
+                    "primary-container": "#f87060",
+                    "on-secondary": "#303033",
+                    "surface-container-lowest": "#0e0e10",
+                    "outline-variant": "#58413e",
+                    "on-tertiary-fixed": "#1b1b1e",
+                    "on-primary-fixed-variant": "#881e17",
+                    "tertiary-container": "#9b9a9d",
+                    "surface": "#131315",
+                    "on-secondary-fixed": "#1b1b1e",
+                    "on-tertiary": "#303033",
+                    "inverse-primary": "#a9362b",
+                    "surface-container": "#201f22",
+                    "background": "#09090b",
+                    "on-secondary-container": "#b6b4b8",
+                    "error": "#ffb4ab",
+                    "tertiary-fixed-dim": "#c8c6c9",
+                    "surface-dim": "#131315",
+                    "surface-variant": "#353437",
+                    "surface-tint": "#ffb4a9",
+                    "on-error-container": "#ffdad6",
+                    "primary": "#ffb4a9",
+                    "secondary-container": "#47464a",
+                    "on-error": "#690005",
+                    "secondary": "#c8c5ca",
+                    "on-secondary-fixed-variant": "#47464a",
+                    "secondary-fixed": "#e4e1e6",
+                    "tertiary-fixed": "#e4e1e5",
+                    "primary-fixed-dim": "#ffb4a9",
+                    "primary-fixed": "#ffdad5",
+                    "on-primary-container": "#6a0505",
+                    "tertiary": "#c8c6c9",
+                    "error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap": "80px",
+                    "container-max": "1280px",
+                    "gutter": "32px",
+                    "margin-edge": "40px",
+                    "stack-sm": "8px",
+                    "stack-lg": "32px",
+                    "stack-md": "16px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Playfair Display"],
+                    "headline-md": ["Playfair Display"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "body-lg": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "label-caps": ["Manrope"],
+                    "meta": ["Manrope"]
+            },
+            "fontSize": {
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.8", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "meta": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="editorial-scroll">
+<!-- Side Navigation Bar -->
+<nav class="flex flex-col h-full py-stack-lg px-margin-edge h-screen w-64 fixed left-0 top-0 bg-surface border-r border-outline-variant z-50">
+<div class="mb-12">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tighter">wndrly Journey</h1>
+<p class="font-meta text-on-surface-variant/60 uppercase tracking-widest mt-1">Editorial Noir</p>
+</div>
+<div class="flex flex-col gap-6">
+<!-- Journey Tab (Active) -->
+<a class="flex items-center gap-4 text-primary font-bold border-r-2 border-primary hover:text-primary transition-colors duration-300 group" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-caps text-label-caps">Journey</span>
+</a>
+<!-- Gallery Tab -->
+<a class="flex items-center gap-4 text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 group" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-label-caps text-label-caps">Gallery</span>
+</a>
+<!-- Map Tab -->
+<a class="flex items-center gap-4 text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 group" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="font-label-caps text-label-caps">Map</span>
+</a>
+<!-- Favorites Tab -->
+<a class="flex items-center gap-4 text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 group" href="#">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-label-caps text-label-caps">Favorites</span>
+</a>
+</div>
+<div class="mt-auto">
+<button class="w-full bg-primary-container text-on-primary-container font-label-caps text-label-caps py-4 px-6 scale-95 active:opacity-80 transition-transform flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" style="font-size: 18px;">add</span>
+                Add Entry
+            </button>
+<div class="mt-8 flex items-center gap-3">
+<div class="w-10 h-10 bg-surface-container-highest flex items-center justify-center border border-outline-variant/30 overflow-hidden">
+<img alt="Curator Profile" class="w-full h-full object-cover grayscale" data-alt="A close-up portrait of a sophisticated woman with an artistic aesthetic. She is photographed in a dimly lit studio with dramatic, cinematic shadows. The style is high-end editorial photography with a focus on deep blacks and subtle highlights, reflecting a noir and intellectual mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcXTwn7PWFDsG2e8_vnZssCYjkgs3yctYhQ2kDqTxvv4VZzCGBM9LZKsBmx1s-RMry6TMXT7caHgc7wZPFEd39PfZjUWMoflW7DzSb2_5nvZm6ejsk33rjYQrgGSUkaGZf4_imuz2t49m16hbxUPySftXNtAuzoX2921i4hWuPcAMG7_Es4ss9Mx0mFzYb666IpiP-pRGpA5WU9RIg5fX_xPJa4xg6yvjQKqISpd-YrPb5cxmPVyFzhl7F4-dB6G0hHf3w7K5qfgk"/>
+</div>
+<div>
+<p class="font-meta text-on-surface">Elena Vance</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Chief Curator</p>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Canvas -->
+<main class="ml-64 min-h-screen">
+<!-- Top App Bar (Hidden on scroll logic often applied, but here as a fixed shell part) -->
+<header class="flex justify-between items-center h-20 px-gutter fixed top-0 right-0 w-[calc(100%-16rem)] bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 z-40">
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-headline-md text-on-surface">Japan Diary</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center bg-surface-container-low px-4 py-2 border border-outline-variant/20">
+<span class="material-symbols-outlined text-on-surface-variant text-sm mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-meta text-on-surface-variant placeholder:text-on-surface-variant/30 w-48" placeholder="Search experiences..." type="text"/>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</header>
+<!-- Content Area -->
+<div class="pt-20">
+<!-- Hero Section -->
+<section class="relative h-[85vh] w-full overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida/ADBb0uh9kpRjygCMkdcEh6ZF5GgO6M4nASJM1fsoDvRtnjVKH1fW6FMaSVqJVWt4PUOWY81sQZgeyDrAVlUhNjWLgqHToKg1i534vcgl1luS1wG1p9hpIvh4WthDfWsFGXu6qwTeQBIzwhJbebHbAC65A25igj4bFBknJl8crNrOPa7b6qX_CzmWM0G-w8Ke4Q7wgnFUGPnyGx9xeU54SxQ6XisV4YkGe5vkGDLXovmmTZfbUkHsiC-f-JoKwKI');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#09090b] via-[#09090b]/20 to-transparent"></div>
+<div class="absolute bottom-margin-edge left-margin-edge max-w-2xl">
+<p class="font-label-caps text-label-caps text-primary mb-4 tracking-[0.2em]">OCT 15 — OCT 22</p>
+<h2 class="font-display-lg text-display-lg text-on-surface mb-6">Autumn in Kyoto</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed opacity-80">
+                        A cinematic exploration of ancient traditions meeting the silent, neon pulse of the night. From the vermilion gates of Fushimi Inari to the quiet whispers of the Gion district.
+                    </p>
+</div>
+</section>
+<!-- Journal Section -->
+<section class="px-margin-edge py-section-gap max-w-[1280px] mx-auto">
+<div class="mb-16 flex justify-between items-end border-b border-outline-variant/20 pb-8">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Daily Reflections</h3>
+<p class="font-meta text-on-surface-variant mt-2">A chronological archive of moments caught in time.</p>
+</div>
+<div class="flex gap-4">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Sort by: Date</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer" data-icon="filter_list">filter_list</span>
+</div>
+</div>
+<!-- Timeline & Masonry Content -->
+<div class="relative pl-12">
+<div class="timeline-line"></div>
+<div class="masonry-grid">
+<!-- Entry 1 -->
+<div class="relative group">
+<div class="absolute -left-[56px] top-6 w-8 h-[1px] bg-primary"></div>
+<div class="bg-surface-container border border-outline-variant/10 transition-all duration-500 hover:border-outline-variant/40">
+<div class="aspect-[4/5] overflow-hidden">
+<img alt="Kyoto Temple" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale hover:grayscale-0" data-alt="A cinematic low-angle shot of a traditional Japanese temple in Kyoto at dusk. The architecture is detailed and dark, contrasting with the soft orange glow of paper lanterns. The surrounding maple trees are in full autumn bloom, their deep red leaves creating a rich texture against the near-black sky. The mood is tranquil, intellectual, and deeply atmospheric." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxnkSTX1AMO15dnoB4g57A6_YIf7ZbSI5iR9ki3Nd-XO5NF60x_e8spzs2bFdkB8ovW2n4RDMyxMQDd5K3U9-4KKZNSwxwyj_XLymkhV6cuSv4_7ejaynrOm_QghYD7zzHwqY7cWXzwbtBMupjJRq8F0S3t4IB2su3lAqCqmLcsxKe0Koht4JxoxZqwTFepsxD9PpmlxjAOKU-9EQvbYzHcmKkuvTq0EDRRspY92oBUe1aSVjkaGNHA9oTQJZ1J22hL22oAg9jdv0"/>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="font-label-caps text-label-caps text-primary">OCT 15 / KIYOMIZU-DERA</p>
+</div>
+<span class="material-symbols-outlined text-primary-container" data-icon="wb_sunny">wb_sunny</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                        The golden hour hit the temple heights just as the crowds began to thin. There is a specific kind of silence here that feels heavy with history.
+                                    </p>
+<div class="mt-6 flex gap-2">
+<span class="font-label-caps text-[10px] px-2 py-1 bg-surface-container-highest text-on-surface-variant">ARCHITECTURE</span>
+<span class="font-label-caps text-[10px] px-2 py-1 bg-surface-container-highest text-on-surface-variant">SOLITUDE</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Entry 2 -->
+<div class="relative group mt-12 md:mt-24">
+<div class="absolute -left-[56px] top-6 w-8 h-[1px] bg-primary"></div>
+<div class="bg-surface-container border border-outline-variant/10 transition-all duration-500 hover:border-outline-variant/40">
+<div class="aspect-[3/2] overflow-hidden">
+<img alt="Kyoto Food" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale hover:grayscale-0" data-alt="An exquisite, top-down view of a traditional Kyoto Kaiseki meal served on black lacquerware. The colors of the food—vibrant green matcha, deep red sashimi, and pale white tofu—pop against the dark background. The lighting is soft and focused, like a spotlight in a high-end restaurant, emphasizing the craftsmanship and minimalism of Japanese culinary art." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP-1Ib8uW_iePj_MJodU8eActf4v1Y2jno7RXNY7jFBXhmPajccujRh6DDCitJy26t2uhYni8XBWxTR_A1jMTzEHzs1IQi3rynyr0lwWPQhd4T0YRMaiXDmN-qCNi7P_GpUaC5oyQ3hOTSPhlcUTzDrP6UlnQQPAZ-iYHW7tPc8ZUpVoq8-tQmKwgh4Fi75MhCAywKnD6M-8V1qypUMd7cTBWpYre02N6lup231gCr9nOwBevbs9yaozMvCdYG59vdY_nnuLs_vv0"/>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="font-label-caps text-label-caps text-primary">OCT 17 / PONTOCHO ALLEY</p>
+</div>
+<span class="material-symbols-outlined text-primary-container" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                        Discovered a hidden 6-seat counter serving the most delicate sashimi I've ever tasted. The chef spoke only through his movements.
+                                    </p>
+<div class="mt-6 flex gap-2">
+<span class="font-label-caps text-[10px] px-2 py-1 bg-surface-container-highest text-on-surface-variant">CULINARY</span>
+<span class="font-label-caps text-[10px] px-2 py-1 bg-surface-container-highest text-on-surface-variant">HIDDEN GEMS</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Entry 3 -->
+<div class="relative group mt-6">
+<div class="absolute -left-[56px] top-6 w-8 h-[1px] bg-primary"></div>
+<div class="bg-surface-container border border-outline-variant/10 transition-all duration-500 hover:border-outline-variant/40">
+<div class="aspect-square overflow-hidden">
+<img alt="Bamboo Forest" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale hover:grayscale-0" data-alt="A serene, vertical shot of the Arashiyama Bamboo Grove. The tall bamboo stalks stretch upwards towards a misty, overcast sky, creating a rhythmic pattern of vertical lines. The lighting is cool and diffused, highlighting the soft green hues of the bamboo against the dark, damp earth of the path. The aesthetic is monochromatic and deeply peaceful." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKxXsBt5XOcdtk7b0WVEfgWBgS37wcCKjT355iRyCHeg_iOvsonMLFbW1oOyVKzETwD8QLyOI-xSvUmN1I5FUzrLr6PnzF9DRITfxFkcni1AH04E18h7PtiLuWIdCD-bqFaJnyLHic2EH9zGlgQuEfaKKUk44cgLu08mUUzkfmwW7-GVJxPpVOeLW7Xui0i8vHe7MWFoHcNMfOvfh9AK-mP06_l0w2ib6_-ujz-isd_AyyXTGQSXtvUXYnSK8mMWS44E7fXB-UWxk"/>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="font-label-caps text-label-caps text-primary">OCT 19 / ARASHIYAMA</p>
+</div>
+<span class="material-symbols-outlined text-primary-container" data-icon="cloud">cloud</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                        Walking through the grove at 6 AM before the world woke up. The sound of bamboo stalks knocking against each other is like nature's own percussion.
+                                    </p>
+<div class="mt-6 flex gap-2">
+<span class="font-label-caps text-[10px] px-2 py-1 bg-surface-container-highest text-on-surface-variant">NATURE</span>
+<span class="font-label-caps text-[10px] px-2 py-1 bg-surface-container-highest text-on-surface-variant">EARLY BIRD</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Entry 4 -->
+<div class="relative group mt-12 md:mt-0">
+<div class="absolute -left-[56px] top-6 w-8 h-[1px] bg-primary"></div>
+<div class="bg-surface-container border border-outline-variant/10 transition-all duration-500 hover:border-outline-variant/40">
+<div class="aspect-[4/3] overflow-hidden">
+<img alt="Gion District" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale hover:grayscale-0" data-alt="A night-time street scene in Gion, Kyoto. Wet cobblestones reflect the warm glow of wooden storefronts and red lanterns. A solitary figure in a kimono is captured in motion, slightly blurred, adding a sense of mystery and fleeting beauty to the scene. The color palette is dominated by deep blacks, charcoal greys, and warm amber glows, creating a sophisticated noir atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqcldJtQmvbS7kNKqp7CIrJZBOTo5-I15uq5HDZVj9G4m7EhacXsmeRx9Zzt_idoF7cWQ6NFUKAU04tujWZNl0M0how92UJCh8x_KblT9u-3kHMFOGSYKUTyYa1V58ZWrrwANWtxG4dKZVlFOba293jpWJRSHLuFfaBGzw_V4YfPR9fKKr71oib-_GCoF5iX0HZOE2xYO9jcb_FrAVT-4oERpJHCQhHTcqlnhBzANPohFa_51ByiOvSV4qDBEo7uyK0kaPewb2gBA"/>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="font-label-caps text-label-caps text-primary">OCT 21 / GION NIGHTS</p>
+</div>
+<span class="material-symbols-outlined text-primary-container" data-icon="rainy">rainy</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                        Rain began to fall just as I entered Gion. The reflections on the cobblestones turned the whole street into a shimmering oil painting.
+                                    </p>
+<div class="mt-6 flex gap-2">
+<span class="font-label-caps text-[10px] px-2 py-1 bg-surface-container-highest text-on-surface-variant">URBAN</span>
+<span class="font-label-caps text-[10px] px-2 py-1 bg-surface-container-highest text-on-surface-variant">ATMOSPHERE</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Map Summary Section -->
+<section class="px-margin-edge py-section-gap bg-surface-container-low/50">
+<div class="max-w-[1280px] mx-auto flex flex-col md:flex-row gap-16 items-center">
+<div class="flex-1">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-6">The Kyoto Orbit</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 opacity-70">
+                            A spatial visualization of the journey through the city's districts. Each point represents a moment of clarity, each path a new discovery.
+                        </p>
+<div class="space-y-4">
+<div class="flex items-center justify-between border-b border-outline-variant/10 pb-4">
+<span class="font-label-caps text-label-caps">Total Distance</span>
+<span class="font-meta text-primary">42.5 KM</span>
+</div>
+<div class="flex items-center justify-between border-b border-outline-variant/10 pb-4">
+<span class="font-label-caps text-label-caps">Destinations Found</span>
+<span class="font-meta text-primary">12 LOCATIONS</span>
+</div>
+</div>
+</div>
+<div class="flex-1 w-full aspect-video bg-surface-container-highest border border-outline-variant/30 relative overflow-hidden group">
+<!-- Simulated Map Image -->
+<img class="w-full h-full object-cover opacity-30 grayscale contrast-125 group-hover:scale-105 transition-transform duration-[2000ms]" data-alt="A stylized, minimalist map of Kyoto featuring elegant line work and high-contrast topography. The map is presented in a dark mode aesthetic with deep blacks and subtle charcoal lines. Small coral-colored dots indicate key travel landmarks, connected by fine, glowing paths. The overall design is clean, sophisticated, and looks like it belongs in a premium travel journal." data-location="Kyoto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1mtmTsAhZuFWWmjtvwdhEveaAnr7bNxWLPaz4y9Ojv8LK_HZ6GHMeJ8ZpGWB5m5VVS1NrScGLR4Gmbe4-fbYwcAiPgu861oWfudAhlV0l_Vk92FYzDsDyu1I94DlmKDJ4dDjYBukFWMdoCbCxs_wDDV2zYSp9DKjG3Rj8qHGIzbfr-WXZzqUpLI_I6qzDs6Agf-MWTiIhOeymPAc7utb5g_IliVqZyAhtq67eruO36be4ASqpkDJkNS_iLdL6zyYSI9X8imOwIcE"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="text-center">
+<span class="material-symbols-outlined text-primary text-4xl mb-2" data-icon="location_on">location_on</span>
+<p class="font-label-caps text-label-caps tracking-widest text-on-surface">INTERACTIVE MAP</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="px-margin-edge py-16 border-t border-outline-variant/10 text-center">
+<p class="font-label-caps text-[10px] text-on-surface-variant/40 tracking-[0.3em]">WNDRLY JOURNEY © 2024 — CURATED BY ELENA VANCE</p>
+</footer>
+</div>
+</main>
+<!-- Interactions -->
+<script>
+        // Atmospheric Scroll Effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            const hero = document.querySelector('.relative.h-\\[85vh\\]');
+            if (hero) {
+                hero.style.opacity = 1 - (scrolled / 1000);
+            }
+        });
+
+        // Hover effect for cards
+        const cards = document.querySelectorAll('.bg-surface-container');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-4px)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body></html>

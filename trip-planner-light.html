@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Japan 2026 | wndrly Trip Planner</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Be+Vietnam+Pro:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#ffdad5",
+                        "on-primary-fixed": "#410001",
+                        "on-secondary-container": "#546758",
+                        "secondary-fixed-dim": "#b7ccb9",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#f5f0ea",
+                        "inverse-primary": "#ffb4a9",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#ece7e2",
+                        "on-primary-fixed-variant": "#881e17",
+                        "surface": "#fef9f3",
+                        "tertiary-fixed-dim": "#d4c4b2",
+                        "outline-variant": "#dfbfbb",
+                        "on-tertiary-container": "#3b3124",
+                        "surface-tint": "#a9362b",
+                        "surface-container": "#f2ede7",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e6e2dc",
+                        "primary-fixed-dim": "#ffb4a9",
+                        "primary": "#a9362b",
+                        "on-tertiary-fixed-variant": "#504538",
+                        "on-secondary-fixed": "#0e1f13",
+                        "surface-dim": "#ded9d4",
+                        "primary-container": "#f87060",
+                        "inverse-surface": "#32302c",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#f1e0cd",
+                        "on-surface-variant": "#58413e",
+                        "surface-variant": "#e6e2dc",
+                        "secondary-fixed": "#d3e8d5",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#695c4e",
+                        "on-background": "#1d1b18",
+                        "background": "#fef9f3",
+                        "on-tertiary-fixed": "#231a0f",
+                        "on-surface": "#1d1b18",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#506354",
+                        "surface-container-low": "#f8f3ed",
+                        "on-secondary-fixed-variant": "#394b3d",
+                        "on-primary-container": "#6a0505",
+                        "tertiary-container": "#a79888",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#d0e5d2",
+                        "surface-bright": "#fef9f3",
+                        "outline": "#8b716d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "lg": "48px",
+                        "md": "24px",
+                        "sm": "12px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "xs": "4px",
+                        "xl": "80px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Be Vietnam Pro"],
+                        "display-lg": ["Playfair Display"],
+                        "caption": ["Be Vietnam Pro"],
+                        "title-lg": ["Be Vietnam Pro"],
+                        "headline-md-mobile": ["Playfair Display"],
+                        "body-lg": ["Be Vietnam Pro"],
+                        "headline-md": ["Playfair Display"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "body-md": ["Be Vietnam Pro"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-md-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .editorial-shadow {
+            box-shadow: 0 4px 20px -4px rgba(80, 99, 84, 0.08);
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #dfbfbb; border-radius: 10px; }
+        .map-line {
+            stroke-dasharray: 8 4;
+            animation: dash 20s linear infinite;
+        }
+        @keyframes dash { to { stroke-dashoffset: -1000; } }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-hidden selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop h-20 fixed top-0 left-0 z-50 bg-surface dark:bg-surface-dim shadow-sm border-b border-surface-container-high">
+<div class="flex items-center gap-md">
+<h1 class="font-display-lg text-headline-md text-primary dark:text-primary-container">wndrly</h1>
+<div class="h-6 w-px bg-outline-variant mx-2"></div>
+<div class="flex flex-col">
+<span class="font-title-lg text-title-lg text-on-surface leading-tight">Japan 2026</span>
+<span class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md inline-block w-fit">Mar 12 - Mar 28</span>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="flex -space-x-3 items-center mr-4">
+<img alt="Collaborator avatars" class="h-10 w-10 rounded-full border-2 border-surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWOcxjAx91mHrM2qMFpDaI9kFLgDcpbwJBGTPZX0U7eRPA7ISAv5M6pXq8leuMZwbFxocL6At-iD4JCfCCdNQIMFqdE6OTb3o2wNeFa7Ww0jjqL6Mrn53XcQJ7NgT02aDDXwoIZ3LPzb2NDIx1SKRKU_jWxttjTA39De04d1f5ih_U9v5ncKEH9e7VbF0cJf5KG1ozAy4eTwZS92I3o_p8S8CIieEx9SmMaeAkLItHcMp0TLp3x5UrtISPif9JzR3p38AQmL9MiOo"/>
+<img alt="Collaborator avatars" class="h-10 w-10 rounded-full border-2 border-surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPv5QvEA9vRJ33iKqxnKpAR9XezSCu_3HfHP1bgbmsWal4r4Zx1eCkYnkxZVIM88HukxQ9FQVHoO42npSjN0klleCa7UDt5kpYeowpqtPe_y2ABmnU-UDOYBl52YApVJS8gZunLg0_ppbnHnwF8Mvf-Jr0uK0xQWbvlrm-7vYXxjjr3_GYQap2ulA3fZXStJcK0460yCjJGdRuCj27oamaNz8X74NctFGS968Wq0XGkMoigTsd2uLXAISAvua5zdJC8dyxWdM_eik"/>
+<img alt="Collaborator avatars" class="h-10 w-10 rounded-full border-2 border-surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAt6un-irXmdXPoqUMiHwiptr6H2UfEnm7davRUa33dxhB6oqAXSZ2siSn4WosH4Zhk7XdRLEyCAI5WLdTXk9Fj4ZkvjjpOLHSoOAa7U1-FsY4wf0b8gE5Gy5cOMwGKQHwijhJbSOTYa7AKf51XSOYyr-5dzj_HzKqTIqPqaKFGWTTpYrmfu5tPZUZEixxvYB5eFxJZlLB3Nq21K28quQDS3xY99eKf8HE9xXEwzov8osklSwUd0ey3_yeILUfAMrRzwwegfjpQOMY"/>
+<div class="h-10 w-10 rounded-full border-2 border-surface bg-surface-container-highest flex items-center justify-center text-label-md font-label-md">+2</div>
+</div>
+<button class="flex items-center gap-xs px-md py-2 border border-outline rounded-lg text-on-surface-variant font-label-md hover:text-primary-container transition-colors duration-200">
+<span class="material-symbols-outlined" style="font-size: 20px;">ios_share</span>
+                Share
+            </button>
+<button class="flex items-center gap-xs px-md py-2 bg-primary text-on-primary rounded-lg font-label-md active:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-size: 20px;">download</span>
+                Export
+            </button>
+</div>
+</header>
+<main class="flex h-screen pt-20">
+<!-- Left Panel: Itinerary -->
+<aside class="w-80 flex-shrink-0 flex flex-col bg-surface-container-low border-r border-outline-variant overflow-y-auto">
+<div class="p-md space-y-md">
+<!-- Day 1 Active -->
+<div class="relative pl-4">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-container rounded-full"></div>
+<div class="flex justify-between items-end mb-sm">
+<h3 class="font-title-lg text-title-lg text-on-surface">Day 1: Mar 12</h3>
+<span class="font-label-md text-label-md text-primary">Kyoto Arrival</span>
+</div>
+<div class="space-y-sm">
+<!-- Draggable Card 1 -->
+<div class="bg-surface-container-lowest p-sm rounded-xl editorial-shadow border border-outline-variant group cursor-grab active:cursor-grabbing hover:bg-surface-container transition-all">
+<div class="flex gap-sm">
+<div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-surface-dim">
+<img class="w-full h-full object-cover" data-alt="A serene, detailed photograph of the Kinkaku-ji golden pavilion reflecting in a mirror-like pond in Kyoto. The golden leaf architecture glows under soft, diffused morning sunlight, surrounded by meticulously manicured Japanese pine trees and stone gardens. The visual style is premium travel editorial, with high-end textures and a warm, inviting atmosphere consistent with a light-mode color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3__g_L71cDCWx3dvWDLZgA4NDQKemgoXMEPOFoH4OHOFALTkSQ4_oPIE-jn_zKGG2rbMAsyz1DyKTsxiWSGqTXFXGwr3sIVNNIhMPslnFfx3XgMZ2MooEl7PB6wW8tFaJIBjas7TL1irT0TQ_HsS6_R_JI9iBe4zsVfWLLVNo6rrNUjJPGmukUgMztrlhOfzjVD6GyI5rkhndZae3jPhZsKXLmotbdGBQiYZv8Qsz8U556vbXAJZOn5_TB2Pr6bO_oY5sy36P6fk"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h4 class="font-label-md text-label-md text-on-surface">Kinkaku-ji</h4>
+<span class="material-symbols-outlined text-secondary text-[18px]">drag_indicator</span>
+</div>
+<div class="flex items-center gap-xs mt-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="text-caption font-caption">09:00 AM</span>
+</div>
+<div class="mt-2 flex gap-1">
+<span class="px-2 py-0.5 bg-secondary-container text-on-secondary-container text-[10px] rounded uppercase tracking-wider font-bold">Temple</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Draggable Card 2 -->
+<div class="bg-surface p-sm rounded-xl border border-outline-variant/30 group cursor-grab active:cursor-grabbing hover:bg-surface-container transition-all">
+<div class="flex gap-sm">
+<div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-surface-dim">
+<img class="w-full h-full object-cover" data-alt="A lush and immersive view looking up through the towering Arashiyama Bamboo Grove in Kyoto. The sunlight filters through the dense, green bamboo stalks creating a rhythmic pattern of light and shadow. The mood is tranquil and adventurous, capturing the essence of a high-end Japanese travel experience with professional editorial lighting and soft sand-toned hues in the sky above." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9Kh5nPV6uHBD67lcs8RXlGZ5O0tX4tuQO2Op9gbW_ywKhegvo1gOXjBsjvd7zofh7AiDSkf_eGiRdnQwPJ1vYz6kb8H2Bmy63-Yip9muEyw7gu0VglSHnJlPVAIeLsO-_5WZgpbOGTqyltoErDykuukNSfP1O0b8VXlVGXCGo8GURdcDGxS2Np2xfZlIesaE4-LXxyHJKtRkAyVp4PoQcVdfWl3p-j_T8-Qx76xCg877JddKunx5CDTSceql2BJFebpcZhjXL8aU"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h4 class="font-label-md text-label-md text-on-surface">Bamboo Grove</h4>
+<span class="material-symbols-outlined text-secondary text-[18px]">drag_indicator</span>
+</div>
+<div class="flex items-center gap-xs mt-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="text-caption font-caption">11:30 AM</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Day 2 -->
+<div class="relative pl-4 opacity-70 hover:opacity-100 transition-opacity">
+<div class="flex justify-between items-end mb-sm">
+<h3 class="font-title-lg text-title-lg text-on-surface-variant">Day 2: Mar 13</h3>
+</div>
+<div class="p-md border-2 border-dashed border-outline-variant rounded-xl flex items-center justify-center text-on-surface-variant gap-sm hover:border-primary-container hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined">add_location_alt</span>
+<span class="font-label-md">Add Stop</span>
+</div>
+</div>
+</div>
+<!-- SideNavBar Component Logic (Integrated) -->
+<nav class="mt-auto p-md border-t border-outline-variant grid grid-cols-4 gap-2 bg-surface-container-low">
+<button class="flex flex-col items-center gap-1 p-2 text-primary font-bold bg-primary-container/10 rounded-lg">
+<span class="material-symbols-outlined">event_note</span>
+<span class="text-[10px] font-label-md uppercase tracking-tight">Itinerary</span>
+</button>
+<button class="flex flex-col items-center gap-1 p-2 text-secondary font-label-md hover:bg-surface-container-highest transition-all rounded-lg">
+<span class="material-symbols-outlined">map</span>
+<span class="text-[10px] font-label-md uppercase tracking-tight">Map</span>
+</button>
+<button class="flex flex-col items-center gap-1 p-2 text-secondary font-label-md hover:bg-surface-container-highest transition-all rounded-lg">
+<span class="material-symbols-outlined">location_on</span>
+<span class="text-[10px] font-label-md uppercase tracking-tight">Places</span>
+</button>
+<button class="flex flex-col items-center gap-1 p-2 text-secondary font-label-md hover:bg-surface-container-highest transition-all rounded-lg">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-label-md uppercase tracking-tight">Settings</span>
+</button>
+</nav>
+</aside>
+<!-- Center Panel: Map -->
+<section class="flex-1 relative bg-surface-container-low overflow-hidden">
+<!-- Map Texture/Placeholder -->
+<div class="absolute inset-0 bg-[#f5f0ea]" data-location="Kyoto, Japan" style="">
+<!-- SVG Map Overlay Mock -->
+<svg class="w-full h-full opacity-60" viewbox="0 0 1000 1000">
+<path d="M100,200 Q400,100 600,400 T900,300" fill="none" stroke="#dfbfbb" stroke-linecap="round" stroke-width="80"></path>
+<path d="M200,800 Q500,700 800,900" fill="none" stroke="#d3e8d5" stroke-linecap="round" stroke-width="40"></path>
+<!-- Route Line -->
+<path class="map-line" d="M320,350 L480,520 L650,480" fill="none" id="route" stroke="#f87060" stroke-width="2"></path>
+</svg>
+<!-- Markers -->
+<!-- Marker 1 (Active) -->
+<div class="absolute top-[35%] left-[32%] -translate-x-1/2 -translate-y-full group cursor-pointer">
+<div class="relative flex flex-col items-center">
+<div class="bg-primary text-on-primary w-8 h-8 rounded-full flex items-center justify-center font-bold editorial-shadow border-2 border-surface scale-125 transition-transform">1</div>
+<div class="w-0.5 h-4 bg-primary"></div>
+<div class="absolute bottom-12 whitespace-nowrap bg-surface px-3 py-1 rounded-full text-label-md shadow-sm border border-outline-variant font-semibold">Kinkaku-ji</div>
+</div>
+</div>
+<!-- Marker 2 -->
+<div class="absolute top-[52%] left-[48%] -translate-x-1/2 -translate-y-full group cursor-pointer">
+<div class="relative flex flex-col items-center opacity-80 hover:opacity-100 hover:scale-110 transition-all">
+<div class="bg-secondary text-on-secondary w-8 h-8 rounded-full flex items-center justify-center font-bold border-2 border-surface">2</div>
+<div class="w-0.5 h-3 bg-secondary"></div>
+<div class="absolute bottom-12 whitespace-nowrap bg-surface px-3 py-1 rounded-full text-caption border border-outline-variant">Bamboo Grove</div>
+</div>
+</div>
+</div>
+<!-- Map Controls -->
+<div class="absolute right-md bottom-md flex flex-col gap-sm">
+<button class="bg-surface p-2 rounded-lg editorial-shadow border border-outline-variant text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="bg-surface p-2 rounded-lg editorial-shadow border border-outline-variant text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<button class="bg-surface p-2 rounded-lg editorial-shadow border border-outline-variant text-primary hover:bg-surface-container transition-colors mt-2">
+<span class="material-symbols-outlined">my_location</span>
+</button>
+</div>
+<!-- Map Search Overlays -->
+<div class="absolute top-md left-md">
+<div class="bg-surface/90 backdrop-blur-md p-2 rounded-xl editorial-shadow border border-outline-variant w-80 flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary px-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 w-full text-body-md placeholder:text-outline" placeholder="Search Kyoto attractions..." type="text"/>
+</div>
+</div>
+</section>
+<!-- Right Panel: Place Details -->
+<aside class="w-96 flex-shrink-0 flex flex-col bg-surface border-l border-outline-variant overflow-y-auto">
+<div class="relative h-64 flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A grand, close-up photograph of the Zen Buddhist Kinkaku-ji temple's top two floors, entirely covered in pure gold leaf. The architecture is showcased against a soft, hazy blue sky with vibrant green forest foliage in the background. The lighting is crisp and detailed, emphasizing the reflective quality of the gold. The image exudes a sense of premium travel discovery and high-end editorial aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2VIhv1KCD2nTlux3EXTcEN1DseAYeZfqnMy_6x-NAyBiVKX2up70Fy4TigkPWF-6N_MWb-oCWJVhN8b1dr9EpoFGOVSdki2iXwI5YuTsbWL93NhNvgGHNoaDnGMkunBRciySA8q8I_-pO7dMbJNnRexr35x08TndtSyUJrC1Yl04cqIxk1j9KTYKWBXVNZ6M0qrY6XhJRQnaKOy2xJavvNOnjyrjCauZ-UnIsKfhR3pj7yH2Kj6JkDxsqE0AGGrdN7pPwNxLhc7w"/>
+<button class="absolute top-md right-md bg-surface/50 backdrop-blur-sm p-2 rounded-full text-on-surface hover:bg-surface transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-surface to-transparent"></div>
+</div>
+<div class="px-md pb-xl -mt-8 relative z-10">
+<div class="flex justify-between items-start">
+<h2 class="font-display-lg text-headline-md text-on-surface">Kinkaku-ji</h2>
+<div class="flex items-center gap-xs bg-primary-fixed px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-on-primary-fixed text-label-md">4.8</span>
+</div>
+</div>
+<p class="text-on-surface-variant font-label-md mt-1 uppercase tracking-widest text-[12px]">Golden Pavilion • Zen Buddhist Temple</p>
+<div class="flex flex-wrap gap-2 mt-md">
+<span class="px-3 py-1 bg-surface-container-high text-on-surface text-[12px] rounded-full border border-outline-variant/30 font-label-md">Cultural</span>
+<span class="px-3 py-1 bg-surface-container-high text-on-surface text-[12px] rounded-full border border-outline-variant/30 font-label-md">Historical</span>
+<span class="px-3 py-1 bg-surface-container-high text-on-surface text-[12px] rounded-full border border-outline-variant/30 font-label-md">Garden</span>
+</div>
+<div class="mt-xl space-y-md">
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-primary">schedule</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Operating Hours</p>
+<p class="text-on-surface-variant font-body-md">9:00 AM – 5:00 PM Daily</p>
+</div>
+</div>
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Address</p>
+<p class="text-on-surface-variant font-body-md">1 Kinkakujicho, Kita Ward, Kyoto, 603-8361, Japan</p>
+</div>
+</div>
+<div class="pt-md border-t border-outline-variant">
+<div class="flex justify-between items-center mb-sm">
+<h4 class="font-label-md text-label-md text-on-surface uppercase tracking-widest">My Notes</h4>
+<span class="material-symbols-outlined text-secondary cursor-pointer hover:text-primary transition-colors">edit</span>
+</div>
+<div class="bg-surface-container-low p-md rounded-xl border border-outline-variant italic text-on-surface-variant font-body-md">
+                            "Must visit early morning to avoid crowds. The reflection in the Kyōko-chi pond is best before 10 AM. Recommended to bring cash for the admission fee."
+                        </div>
+</div>
+</div>
+<button class="w-full mt-xl py-4 bg-primary text-on-primary font-label-md rounded-xl editorial-shadow hover:bg-primary-container transition-all flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined">confirmation_number</span>
+                    Book Admission
+                </button>
+</div>
+</aside>
+</main>
+<!-- Contextual FAB (Hidden by default unless on mobile, but here for completeness) -->
+<button class="md:hidden fixed bottom-md right-md w-14 h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center active:scale-95 transition-transform z-[100]">
+<span class="material-symbols-outlined">add</span>
+</button>
+<script>
+        // Simple interactivity for demonstration
+        document.querySelectorAll('aside nav button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('aside nav button').forEach(b => {
+                    b.classList.remove('text-primary', 'font-bold', 'bg-primary-container/10');
+                    b.classList.add('text-secondary');
+                });
+                btn.classList.add('text-primary', 'font-bold', 'bg-primary-container/10');
+                btn.classList.remove('text-secondary');
+            });
+        });
+    </script>
+</body></html>

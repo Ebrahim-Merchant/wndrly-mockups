@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fff8f4;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid #eee3d8;
+        }
+        .donut-segment {
+            transition: stroke-dashoffset 1s ease-out;
+        }
+        /* Hide scrollbar */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#93000a",
+                        "primary": "#a9362b",
+                        "primary-fixed": "#ffdad5",
+                        "on-secondary-fixed": "#261906",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#fff1e6",
+                        "on-primary-fixed-variant": "#881e17",
+                        "on-primary": "#ffffff",
+                        "outline": "#8b716d",
+                        "surface-variant": "#f2dfcf",
+                        "secondary": "#6f5b42",
+                        "surface": "#fff8f4",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#dfbfbb",
+                        "on-background": "#231a10",
+                        "surface-container-high": "#f7e5d4",
+                        "tertiary-container": "#599df0",
+                        "on-tertiary-fixed": "#001c39",
+                        "background": "#fff8f4",
+                        "primary-container": "#f87060",
+                        "inverse-surface": "#392f23",
+                        "on-surface": "#231a10",
+                        "surface-tint": "#a9362b",
+                        "surface-bright": "#fff8f4",
+                        "secondary-container": "#f6dbbc",
+                        "secondary-fixed": "#f9debf",
+                        "secondary-fixed-dim": "#dcc2a4",
+                        "tertiary": "#0060ac",
+                        "tertiary-fixed": "#d4e3ff",
+                        "surface-container-highest": "#f2dfcf",
+                        "inverse-on-surface": "#ffeedf",
+                        "on-secondary-container": "#735f46",
+                        "on-surface-variant": "#58413e",
+                        "on-secondary-fixed-variant": "#55442d",
+                        "inverse-primary": "#ffb4a9",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#6a0505",
+                        "on-tertiary-fixed-variant": "#004883",
+                        "surface-container": "#fdebda",
+                        "tertiary-fixed-dim": "#a4c9ff",
+                        "on-primary-fixed": "#410001",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#003360",
+                        "surface-dim": "#e9d7c7",
+                        "primary-fixed-dim": "#ffb4a9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "lg": "48px",
+                        "sm": "12px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "xs": "4px",
+                        "margin-mobile": "16px",
+                        "base": "8px",
+                        "xl": "80px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "title-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-full py-lg px-md bg-surface-container-low dark:bg-surface-container-lowest h-screen w-64 fixed left-0 top-0">
+<div class="mb-xl flex items-center gap-sm">
+<img alt="wndrly logo" class="h-8 w-auto" src="https://lh3.googleusercontent.com/aida/ADBb0uimBi2L38PI_vDqApxIrf2h9iyL_VccKlQBMo7GAvuOXWgoxgU7A2P3T6URfxOK9_lTQuhJXfgn3_I865QQe0SfKTDZsSws6crMQlPyVOxY8keVMx-UI8E2vJr1gTktxvNw_DYa0hNUWm-9o3YAWD6TOKtlwN5BNgGm0Ump5BVnbn_PTN2HaWTHkCr7Cb9kMvUh4pJynQHPDh-x8xrF865KogDlq-1F1qzO2_xXXLcOf1-WRIZG1MKvCQ"/>
+<div>
+<h1 class="font-display-lg text-display-lg font-bold text-primary dark:text-primary-container leading-none">wndrly</h1>
+<p class="text-label-sm text-on-surface-variant">Travel Finance</p>
+</div>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-md py-sm px-md rounded-xl transition-colors text-on-surface-variant hover:bg-surface-container-high" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-md py-sm px-md rounded-xl transition-colors text-on-surface-variant hover:bg-surface-container-high" href="#">
+<span class="material-symbols-outlined" data-icon="flight_takeoff">flight_takeoff</span>
+<span class="font-label-md">Trips</span>
+</a>
+<a class="flex items-center gap-md py-sm px-md rounded-xl transition-colors text-on-surface-variant hover:bg-surface-container-high" href="#">
+<span class="material-symbols-outlined" data-icon="public">public</span>
+<span class="font-label-md">Atlas</span>
+</a>
+<a class="flex items-center gap-md py-sm px-md rounded-xl transition-colors text-primary font-bold border-r-4 border-primary" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-label-md">Budget</span>
+</a>
+<a class="flex items-center gap-md py-sm px-md rounded-xl transition-colors text-on-surface-variant hover:bg-surface-container-high" href="#">
+<span class="material-symbols-outlined" data-icon="beach_access">beach_access</span>
+<span class="font-label-md">Vacay</span>
+</a>
+<a class="flex items-center gap-md py-sm px-md rounded-xl transition-colors text-on-surface-variant hover:bg-surface-container-high" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-md">Journey</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-outline-variant pt-md">
+<div class="flex items-center gap-sm px-md py-sm hover:bg-surface-container-high rounded-xl transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-3xl" data-icon="account_circle">account_circle</span>
+<span class="font-label-md">Ebrahim</span>
+</div>
+</div>
+</aside>
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 w-full md:w-[calc(100%-16rem)] z-40 bg-surface/80 backdrop-blur-md flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop">
+<div class="flex items-center gap-sm">
+<span class="md:hidden material-symbols-outlined text-on-surface" data-icon="menu">menu</span>
+<h2 class="font-headline-lg text-headline-lg font-bold text-primary">Budget Tracker</h2>
+</div>
+<div class="flex items-center gap-md">
+<div class="hidden lg:flex items-center gap-sm px-md py-xs bg-surface-container rounded-full">
+<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-label-md placeholder-outline" placeholder="Search expenses..." type="text"/>
+</div>
+<div class="flex gap-sm">
+<button class="p-sm rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-sm rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+<button class="hidden sm:flex bg-primary-container text-on-primary-container px-md py-sm rounded-full font-label-md items-center gap-xs hover:shadow-lg transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                Add Expense
+            </button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="pt-24 pb-xl md:ml-64 px-margin-mobile md:px-margin-desktop">
+<!-- Trip Overview Hero -->
+<section class="mb-lg">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-surface-container-lowest p-md rounded-xl border border-outline-variant shadow-sm transition-transform hover:-translate-y-1">
+<p class="text-label-sm text-outline uppercase tracking-wider mb-xs">Total Budget</p>
+<h3 class="font-headline-lg text-headline-lg text-primary">$5,000.00</h3>
+<div class="mt-md h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 100%"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-md rounded-xl border border-outline-variant shadow-sm transition-transform hover:-translate-y-1">
+<p class="text-label-sm text-outline uppercase tracking-wider mb-xs">Spent So Far</p>
+<h3 class="font-headline-lg text-headline-lg text-secondary">$3,420.50</h3>
+<div class="mt-md h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary" style="width: 68.4%"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-md rounded-xl border border-outline-variant shadow-sm transition-transform hover:-translate-y-1">
+<p class="text-label-sm text-outline uppercase tracking-wider mb-xs">Remaining</p>
+<h3 class="font-headline-lg text-headline-lg text-tertiary">$1,579.50</h3>
+<div class="mt-md h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-tertiary" style="width: 31.6%"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Insights -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-gutter mb-lg">
+<!-- Category Breakdown Donut -->
+<div class="lg:col-span-4 bg-surface-container-lowest p-md rounded-xl border border-outline-variant flex flex-col items-center justify-center">
+<h4 class="font-title-md text-title-md text-on-surface mb-md w-full">Expense Categories</h4>
+<div class="relative w-48 h-48 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="transparent" r="15.915" stroke="#eee3d8" stroke-width="3"></circle>
+<!-- Accommodation (Blue - tertiary) 40% -->
+<circle cx="18" cy="18" fill="transparent" r="15.915" stroke="#0060ac" stroke-dasharray="40 60" stroke-dashoffset="0" stroke-width="3"></circle>
+<!-- Food (Orange - secondary-fixed) 25% -->
+<circle cx="18" cy="18" fill="transparent" r="15.915" stroke="#6f5b42" stroke-dasharray="25 75" stroke-dashoffset="-40" stroke-width="3"></circle>
+<!-- Transport (Green - tertiary-fixed-dim) 15% -->
+<circle cx="18" cy="18" fill="transparent" r="15.915" stroke="#599df0" stroke-dasharray="15 85" stroke-dashoffset="-65" stroke-width="3"></circle>
+<!-- Activities (Coral - primary) 12% -->
+<circle cx="18" cy="18" fill="transparent" r="15.915" stroke="#f87060" stroke-dasharray="12 88" stroke-dashoffset="-80" stroke-width="3"></circle>
+<!-- Shopping (Purple - custom) 8% -->
+<circle cx="18" cy="18" fill="transparent" r="15.915" stroke="#881e17" stroke-dasharray="8 92" stroke-dashoffset="-92" stroke-width="3"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-label-sm text-outline">Spent</span>
+<span class="font-title-md text-on-surface">68%</span>
+</div>
+</div>
+<div class="mt-md w-full grid grid-cols-2 gap-xs">
+<div class="flex items-center gap-xs"><div class="w-2 h-2 rounded-full bg-tertiary"></div><span class="text-label-sm">Accommodation</span></div>
+<div class="flex items-center gap-xs"><div class="w-2 h-2 rounded-full bg-secondary"></div><span class="text-label-sm">Food</span></div>
+<div class="flex items-center gap-xs"><div class="w-2 h-2 rounded-full bg-tertiary-container"></div><span class="text-label-sm">Transport</span></div>
+<div class="flex items-center gap-xs"><div class="w-2 h-2 rounded-full bg-primary-container"></div><span class="text-label-sm">Activities</span></div>
+</div>
+</div>
+<!-- Stats & Converter -->
+<div class="lg:col-span-8 flex flex-col gap-gutter">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Breakdown Card 1 -->
+<div class="bg-surface-container-high p-md rounded-xl flex items-center gap-md">
+<div class="p-sm bg-surface-container-lowest rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="group">group</span>
+</div>
+<div>
+<p class="text-label-sm text-on-surface-variant">Per Person Avg</p>
+<h5 class="font-title-md text-title-md">$1,710.25</h5>
+</div>
+</div>
+<!-- Breakdown Card 2 -->
+<div class="bg-surface-container-high p-md rounded-xl flex items-center gap-md">
+<div class="p-sm bg-surface-container-lowest rounded-lg">
+<span class="material-symbols-outlined text-secondary" data-icon="bolt">bolt</span>
+</div>
+<div>
+<p class="text-label-sm text-on-surface-variant">Daily Burn Rate</p>
+<h5 class="font-title-md text-title-md">$228.00 / day</h5>
+</div>
+</div>
+</div>
+<!-- Currency Converter Widget -->
+<div class="bg-surface-container-lowest p-md rounded-xl border border-outline-variant flex-1">
+<div class="flex justify-between items-center mb-md">
+<h4 class="font-title-md text-title-md text-on-surface">Currency Converter</h4>
+<span class="text-label-sm text-outline">Last updated: 5m ago</span>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-md">
+<div class="flex-1 w-full p-md bg-surface rounded-xl border border-outline-variant focus-within:border-primary-container transition-all">
+<div class="flex justify-between items-center mb-xs">
+<span class="text-label-sm text-outline">From</span>
+<span class="text-label-md font-bold">USD</span>
+</div>
+<input class="w-full text-headline-lg font-headline-lg bg-transparent border-none p-0 focus:ring-0" type="number" value="100.00"/>
+</div>
+<div class="p-sm bg-primary-container text-on-primary-container rounded-full cursor-pointer hover:rotate-180 transition-transform duration-500">
+<span class="material-symbols-outlined" data-icon="swap_horiz">swap_horiz</span>
+</div>
+<div class="flex-1 w-full flex flex-col gap-sm">
+<div class="flex items-center justify-between p-sm bg-surface rounded-xl border border-outline-variant">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 bg-surface-container-high rounded-full overflow-hidden flex items-center justify-center text-label-sm font-bold">🇯🇵</div>
+<span class="text-label-md">JPY</span>
+</div>
+<span class="font-title-md">15,042.50</span>
+</div>
+<div class="flex items-center justify-between p-sm bg-surface rounded-xl border border-outline-variant">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 bg-surface-container-high rounded-full overflow-hidden flex items-center justify-center text-label-sm font-bold">🇪🇺</div>
+<span class="text-label-md">EUR</span>
+</div>
+<span class="font-title-md">92.40</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Expense Table Section -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden">
+<div class="p-md border-b border-outline-variant flex justify-between items-center">
+<h4 class="font-title-md text-title-md">Recent Expenses</h4>
+<div class="flex gap-sm">
+<button class="flex items-center gap-xs px-sm py-xs border border-outline-variant rounded-lg text-label-sm hover:bg-surface transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="filter_list">filter_list</span> Filter
+                    </button>
+<button class="flex items-center gap-xs px-sm py-xs border border-outline-variant rounded-lg text-label-sm hover:bg-surface transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span> Export
+                    </button>
+</div>
+</div>
+<div class="overflow-x-auto no-scrollbar">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low text-label-sm text-outline uppercase tracking-wider">
+<tr>
+<th class="px-md py-sm">Date</th>
+<th class="px-md py-sm">Description</th>
+<th class="px-md py-sm">Category</th>
+<th class="px-md py-sm text-right">Amount</th>
+<th class="px-md py-sm">Paid By</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr class="hover:bg-surface transition-colors cursor-pointer group">
+<td class="px-md py-md text-label-md text-on-surface-variant">Oct 24, 2023</td>
+<td class="px-md py-md font-label-md">Ritz-Carlton Tokyo</td>
+<td class="px-md py-md">
+<span class="inline-flex items-center gap-xs px-sm py-xs bg-tertiary/10 text-tertiary rounded-full text-label-sm">
+<span class="material-symbols-outlined text-xs" data-icon="hotel">hotel</span> Accommodation
+                                </span>
+</td>
+<td class="px-md py-md text-right font-bold text-on-surface">$1,250.00</td>
+<td class="px-md py-md">
+<div class="flex items-center gap-sm">
+<img class="w-8 h-8 rounded-full border border-outline-variant" data-alt="A professional headshot of a smiling young man in a clean white studio setting. Soft daylight illuminates his face, creating a welcoming and approachable fintech user persona. The overall image has a warm, high-end feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6Tg_yloIoyoHhPVBUFFPHDM7JAvmcj1l7rdZPFRxme9UKx6ovbokYAbmndkEeOnPjakdHqQ7hIAzXuoNkNAcwd-9lic9fniiCPkCoz34OgSMyikw4j5j3fw4epA8fTrs4gzixbuYlgzCyFtMTnLdeleQObRwkMkeUcUlcErxWyK_qg8fwQGaqJg-ytxd2Dn6-1jGrZ3ie5-fr1LES9fkuyJ0PJD9czfQCu_OxmVcJ1ljN3j2JWxUrsOFopTCeiy9C53ulW4ICQec"/>
+<span class="text-label-md">Ebrahim</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface transition-colors cursor-pointer group">
+<td class="px-md py-md text-label-md text-on-surface-variant">Oct 23, 2023</td>
+<td class="px-md py-md font-label-md">Sukiyabashi Jiro Sushi</td>
+<td class="px-md py-md">
+<span class="inline-flex items-center gap-xs px-sm py-xs bg-secondary/10 text-secondary rounded-full text-label-sm">
+<span class="material-symbols-outlined text-xs" data-icon="restaurant">restaurant</span> Food
+                                </span>
+</td>
+<td class="px-md py-md text-right font-bold text-on-surface">$450.00</td>
+<td class="px-md py-md">
+<div class="flex items-center gap-sm">
+<img class="w-8 h-8 rounded-full border border-outline-variant" data-alt="A close-up portrait of a cheerful woman with a modern, elegant hairstyle. The lighting is soft and golden, mimicking a late afternoon sunset. The background is a blurred, bright minimalist workspace, evoking a sense of travel and digital nomad lifestyle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqLqXj7AKNDjKwJBA6viCg_d_wNbF4KUK7_LOGIafNzHzsItYCj0JTy2ESIXjwcbE7ioSSiaJJdK___rAq2gBwSt2iCdF8dM2nHAY10CSxn22utso2xQl5UXHr-g2P9Nvg-gPaMfQLlQQeb-mPYJ19SrkMFeo8vgMeGBRTQkzU-7opqIzqhm_Dem_QJCjBbC43xMck-NSVaBFwEVlVCOMd9bj-fMGRR_Goay0h7yWIpl2XlwLir-olS0Yq_oYQ-yzg9uUX-4ALHws"/>
+<span class="text-label-md">Sarah</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface transition-colors cursor-pointer group">
+<td class="px-md py-md text-label-md text-on-surface-variant">Oct 22, 2023</td>
+<td class="px-md py-md font-label-md">Shinkansen Nozomi</td>
+<td class="px-md py-md">
+<span class="inline-flex items-center gap-xs px-sm py-xs bg-tertiary-container/10 text-tertiary-container rounded-full text-label-sm">
+<span class="material-symbols-outlined text-xs" data-icon="train">train</span> Transport
+                                </span>
+</td>
+<td class="px-md py-md text-right font-bold text-on-surface">$185.20</td>
+<td class="px-md py-md">
+<div class="flex items-center gap-sm">
+<img class="w-8 h-8 rounded-full border border-outline-variant" data-alt="A professional headshot of a smiling young man in a clean white studio setting. Soft daylight illuminates his face, creating a welcoming and approachable fintech user persona. The overall image has a warm, high-end feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9uBIj6og3ihgbtyrl5onl6cxSjX-Wa5JUWb4Kpix2PWgJNRJLgGhxH8SLUebw4jMJCm-K8_xbwdLsub5s7mQT8aBBoQs1ZgEy0xxTjac7HZ-3bE2l4UMhPh3fd8C91Kghp2-Uc4iL97clV0St3jX8APJZKH8jt2IjZT0CHkEEk4QWFsM2ggcg0B42eEiFGI7p9bfoBQkP5g8jLqcBVCKOke_yZLy4WAcOexQ3TiNyqLoMGaQTc1ABs6x2DER3_3Tz03dkyu-n2P4"/>
+<span class="text-label-md">Ebrahim</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface transition-colors cursor-pointer group">
+<td class="px-md py-md text-label-md text-on-surface-variant">Oct 22, 2023</td>
+<td class="px-md py-md font-label-md">TeamLab Borderless Tickets</td>
+<td class="px-md py-md">
+<span class="inline-flex items-center gap-xs px-sm py-xs bg-primary-container/10 text-primary-container rounded-full text-label-sm">
+<span class="material-symbols-outlined text-xs" data-icon="confirmation_number">confirmation_number</span> Activities
+                                </span>
+</td>
+<td class="px-md py-md text-right font-bold text-on-surface">$64.00</td>
+<td class="px-md py-md">
+<div class="flex items-center gap-sm">
+<img class="w-8 h-8 rounded-full border border-outline-variant" data-alt="A close-up portrait of a cheerful woman with a modern, elegant hairstyle. The lighting is soft and golden, mimicking a late afternoon sunset. The background is a blurred, bright minimalist workspace, evoking a sense of travel and digital nomad lifestyle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMncDgVegIKZyjda-WO9m4ak4oyVkLOidWmYNLaQOXkObYgZ-7igCYVAHj65t5pmVfi7mfgNbYsfX_RbVsEsvEbLfKG8TCLeQRvCgkWpivNWlPPGoNYJEY8o7FUIRIQ2gT0rSX6U-5Ff6ZJz02-bmFLdGwujsGhMDQiLGyIjEstd98yaaZHUavrYeCwbKQOSxOHOT1Dqx0hxrgezPBsbULl2i3dphf5mmO-LNnct4tjltu5Bu9Wn_nYil0L_z982JP-tBn_uFX3Z4"/>
+<span class="text-label-md">Sarah</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-md right-md md:bottom-lg md:right-margin-desktop w-14 h-14 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition-all z-50 group">
+<span class="material-symbols-outlined text-3xl group-hover:rotate-90 transition-transform duration-300" data-icon="add">add</span>
+<span class="absolute right-16 bg-surface-container-highest px-md py-sm rounded-lg text-label-md shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Add New Expense</span>
+</button>
+<script>
+        // Micro-interaction for currency conversion typing simulation or interactivity
+        const converterInput = document.querySelector('input[type="number"]');
+        converterInput?.addEventListener('input', (e) => {
+            const val = parseFloat(e.target.value) || 0;
+            // Dummy logic for demonstration
+            document.querySelectorAll('.font-title-md')[2].textContent = (val * 150.425).toLocaleString(undefined, {minimumFractionDigits: 2});
+            document.querySelectorAll('.font-title-md')[3].textContent = (val * 0.924).toLocaleString(undefined, {minimumFractionDigits: 2});
+        });
+
+        // Simple animation trigger for the donut chart or other elements
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('wndrly UI initialized');
+        });
+    </script>
+</body></html>

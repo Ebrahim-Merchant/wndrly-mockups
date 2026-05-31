@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>wndrly. Atlas | Your Global Footprint</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#ece1d6",
+                    "surface": "#fef9f3",
+                    "secondary-fixed-dim": "#d0c5ba",
+                    "on-secondary-fixed-variant": "#4d463e",
+                    "inverse-surface": "#32302c",
+                    "inverse-primary": "#ffb4a9",
+                    "tertiary": "#5a5d76",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#696159",
+                    "tertiary-fixed": "#dfe0ff",
+                    "on-secondary-fixed": "#201b14",
+                    "primary-container": "#f87060",
+                    "on-primary-fixed": "#410001",
+                    "error-container": "#ffdad6",
+                    "surface-variant": "#e6e2dc",
+                    "on-tertiary-fixed-variant": "#42455d",
+                    "outline-variant": "#dfbfbb",
+                    "surface-tint": "#a9362b",
+                    "tertiary-fixed-dim": "#c3c4e2",
+                    "outline": "#8b716d",
+                    "on-surface": "#1d1b18",
+                    "inverse-on-surface": "#f5f0ea",
+                    "primary-fixed": "#ffdad5",
+                    "on-secondary": "#ffffff",
+                    "surface-dim": "#ded9d4",
+                    "on-error": "#ffffff",
+                    "surface-container": "#f2ede7",
+                    "surface-container-highest": "#e6e2dc",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-container": "#2d3047",
+                    "surface-container-high": "#ece7e2",
+                    "surface-bright": "#fef9f3",
+                    "on-surface-variant": "#58413e",
+                    "secondary-container": "#e9ded3",
+                    "background": "#fef9f3",
+                    "secondary": "#655d55",
+                    "on-background": "#1d1b18",
+                    "on-primary-container": "#6a0505",
+                    "on-primary-fixed-variant": "#881e17",
+                    "tertiary-container": "#9698b4",
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#ffb4a9",
+                    "surface-container-low": "#f8f3ed",
+                    "primary": "#a9362b",
+                    "on-tertiary-fixed": "#171a30"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "40px",
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "base": "8px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fef9f3;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #1d1b18;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .map-container {
+            background: linear-gradient(to bottom, #f2ede7 0%, #fef9f3 100%);
+            border: 1px solid #e6e2dc;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f2ede7;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #f87060;
+            border-radius: 4px;
+        }
+        .sun-kissed-shadow {
+            box-shadow: 0 10px 30px -5px rgba(248, 112, 96, 0.1);
+        }
+    </style>
+</head>
+<body class="flex min-h-screen overflow-x-hidden">
+<!-- Sidebar Navigation -->
+<nav class="h-screen w-64 fixed left-0 top-0 flex flex-col py-base px-gutter bg-surface border-r border-surface-variant z-50">
+<div class="mb-12 pt-4">
+<img alt="wndrly. logo" class="h-10 w-auto mb-4" src="https://lh3.googleusercontent.com/aida/ADBb0uimBi2L38PI_vDqApxIrf2h9iyL_VccKlQBMo7GAvuOXWgoxgU7A2P3T6URfxOK9_lTQuhJXfgn3_I865QQe0SfKTDZsSws6crMQlPyVOxY8keVMx-UI8E2vJr1gTktxvNw_DYa0hNUWm-9o3YAWD6TOKtlwN5BNgGm0Ump5BVnbn_PTN2HaWTHkCr7Cb9kMvUh4pJynQHPDh-x8xrF865KogDlq-1F1qzO2_xXXLcOf1-WRIZG1MKvCQ"/>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden border-2 border-primary-container">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="A close-up portrait of a young traveler with a friendly smile, wearing a casual linen shirt and a canvas hat. The lighting is warm and golden, suggesting a late afternoon sun in a Mediterranean setting. The overall aesthetic is editorial and premium, with a soft, blurred background of a coastal town." src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface">Explorer Level 12</h3>
+<p class="font-label-sm text-label-sm text-on-secondary-fixed-variant">8,420 XP</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2 flex-grow">
+<a class="flex items-center gap-4 py-3 px-4 rounded-lg text-on-secondary-fixed-variant hover:text-primary transition-colors hover:bg-secondary-container/50" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-label-md text-label-md">Exploration</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 rounded-lg text-primary font-bold border-r-4 border-primary bg-secondary-container/30" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">map</span>
+<span class="font-label-md text-label-md">Atlas</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 rounded-lg text-on-secondary-fixed-variant hover:text-primary transition-colors hover:bg-secondary-container/50" href="#">
+<span class="material-symbols-outlined">bookmark</span>
+<span class="font-label-md text-label-md">Bookmarks</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 rounded-lg text-on-secondary-fixed-variant hover:text-primary transition-colors hover:bg-secondary-container/50" href="#">
+<span class="material-symbols-outlined">military_tech</span>
+<span class="font-label-md text-label-md">Achievements</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 rounded-lg text-on-secondary-fixed-variant hover:text-primary transition-colors hover:bg-secondary-container/50 mt-auto" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</div>
+<button class="mt-8 bg-primary-container text-on-primary py-4 rounded-xl font-label-md text-label-md flex items-center justify-center gap-2 sun-kissed-shadow active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined">add_circle</span>
+            Add Discovery
+        </button>
+</nav>
+<!-- Main Content Canvas -->
+<main class="ml-64 mr-80 flex-grow p-10 min-h-screen">
+<header class="mb-8 flex justify-between items-end">
+<div>
+<h1 class="font-display-lg text-display-lg text-primary mb-2 tracking-tight">World Atlas</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">Your narrative of the world, rendered in Coral and Sand. Where will the next chapter begin?</p>
+</div>
+<div class="flex gap-4 mb-2">
+<div class="bg-surface-container px-4 py-2 rounded-lg flex items-center gap-2 border border-outline-variant">
+<span class="w-3 h-3 rounded-full bg-[#f87060]"></span>
+<span class="font-label-sm text-label-sm">Visited</span>
+</div>
+<div class="bg-surface-container px-4 py-2 rounded-lg flex items-center gap-2 border border-outline-variant">
+<span class="w-3 h-3 rounded-full bg-[#ffdad5]"></span>
+<span class="font-label-sm text-label-sm">Bucket List</span>
+</div>
+</div>
+</header>
+<!-- World Map Canvas -->
+<section class="relative w-full aspect-[16/9] map-container rounded-3xl overflow-hidden mb-12 shadow-inner border border-surface-variant">
+<div class="absolute inset-0 opacity-40 mix-blend-multiply" style="background-image: url('https://www.transparenttextures.com/patterns/pinstriped-suit.png');"></div>
+<!-- Simplified Cartographic SVG Mock -->
+<svg class="w-full h-full p-10" viewbox="0 0 1000 500">
+<!-- Water Mask / Base -->
+<rect fill="transparent" height="500" width="1000"></rect>
+<!-- Stylized Continents (Abstracted for UI) -->
+<!-- North America -->
+<path d="M100,50 L250,50 L280,150 L200,250 L100,200 Z" fill="#e6e2dc"></path>
+<!-- South America -->
+<path d="M220,260 L280,260 L260,450 L210,350 Z" fill="#e6e2dc"></path>
+<!-- Europe / Africa -->
+<path d="M450,50 L550,50 L580,100 L450,150 Z" fill="#e6e2dc"></path> <!-- Europe -->
+<path d="M460,160 L580,160 L600,380 L520,400 L450,300 Z" fill="#e6e2dc"></path> <!-- Africa -->
+<!-- Asia / Oceania -->
+<path d="M600,50 L900,50 L950,250 L750,300 L600,150 Z" fill="#e6e2dc"></path> <!-- Asia -->
+<path d="M800,320 L900,320 L920,400 L820,420 Z" fill="#e6e2dc"></path> <!-- Australia -->
+<!-- Highlighted Countries (Coral - Visited) -->
+<!-- Italy -->
+<path class="transition-all hover:brightness-110 cursor-pointer" d="M510,95 L525,95 L520,115 L515,115 Z" fill="#f87060"></path>
+<!-- Greece -->
+<path class="transition-all hover:brightness-110 cursor-pointer" d="M535,110 L545,110 L540,120 Z" fill="#f87060"></path>
+<!-- Japan -->
+<path class="transition-all hover:brightness-110 cursor-pointer" d="M880,110 L895,130 L885,160 L870,130 Z" fill="#f87060"></path>
+<!-- India -->
+<path class="transition-all hover:brightness-110 cursor-pointer" d="M720,180 L760,180 L740,250 L710,210 Z" fill="#f87060"></path>
+<!-- Bucket List (Peach) -->
+<!-- Iceland -->
+<circle cx="430" cy="40" fill="#ffdad5" r="10" stroke="#f87060" stroke-dasharray="2"></circle>
+<!-- Portugal -->
+<path d="M465,110 L475,110 L475,130 L465,130 Z" fill="#ffdad5"></path>
+<!-- Morocco -->
+<path d="M470,170 L510,170 L500,200 L475,200 Z" fill="#ffdad5"></path>
+</svg>
+<!-- Map Floating Action Button -->
+<button class="absolute bottom-6 right-6 bg-surface p-4 rounded-full shadow-lg border border-surface-variant flex items-center gap-2 hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined text-primary">my_location</span>
+<span class="font-label-md text-label-md">Locate Me</span>
+</button>
+</section>
+<!-- Horizontal Scrollable Cards -->
+<section class="mb-12">
+<div class="flex justify-between items-center mb-6">
+<h2 class="font-headline-md text-headline-md">Recent Expeditions</h2>
+<button class="text-primary font-label-md flex items-center gap-1">View Full Log <span class="material-symbols-outlined">arrow_forward</span></button>
+</div>
+<div class="flex overflow-x-auto gap-6 pb-6 custom-scrollbar">
+<!-- Italy Card -->
+<div class="flex-shrink-0 w-64 bg-surface rounded-2xl border border-surface-variant p-4 sun-kissed-shadow">
+<div class="h-32 rounded-xl overflow-hidden mb-4 relative">
+<img alt="Venice, Italy" class="w-full h-full object-cover" data-alt="A cinematic, high-angle shot of a classic Venetian canal with historic terracotta buildings and a traditional gondola passing through. The lighting is warm morning sun, casting gentle reflections on the greenish-blue water. The aesthetic is editorial and travel-focused, using a rich, warm color palette to evoke discovery and history." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiT1aLYrmSQg5V3FftaoKqODDqDlYo6BawNbnr_d4i_MIbNKGHCWioH_Df__cj7OaiRx2rSlLYW4eHYkm9O_sgR82NNRuOJXs5hNv6EEo_R2YzNjKH7mnAd8ICAd6I6D2mWzCfqDvMZobOdHx2HkEOZgAHNd_Xf48btjZPeESjZUuFbV5k4hULaMfJjzGVdQOHmy6_UaBuEnDUEEGDjmMbshkU0mzby6ts8HfBqNpjqvYMweCDwX6D9lwn_A80DTkxo-MRwL-8lWc"/>
+<div class="absolute top-2 right-2 bg-primary px-2 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-white" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+</div>
+<div class="flex items-center gap-2 mb-1">
+<span class="text-xl">🇮🇹</span>
+<h4 class="font-label-md text-label-md">Italy</h4>
+</div>
+<p class="font-label-sm text-label-sm text-on-secondary-fixed-variant">Last Visited: Oct 2023</p>
+</div>
+<!-- Japan Card -->
+<div class="flex-shrink-0 w-64 bg-surface rounded-2xl border border-surface-variant p-4 sun-kissed-shadow">
+<div class="h-32 rounded-xl overflow-hidden mb-4 relative">
+<img alt="Tokyo, Japan" class="w-full h-full object-cover" data-alt="A serene landscape of Mount Fuji in the background framed by vibrant cherry blossoms in the foreground. The image is bathed in soft, diffused light, highlighting the pink petals and the snow-capped peak. It has a high-end, digital scrapbook aesthetic with a clean, optimistic atmosphere and balanced composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4GmGiJdPUvDxHh6XQUSpjKksrc8EB7v19j_r9UM-vtui6ttFQDIIALz5JQZYJYV7UVCVmvYOw3fo8W3sfwaVxjjABmHxB9LDg9Hvj2UeBBwQFL-BGegAioXU-HuH72DRc3wDTmJkynvhHuPefvr0ocGcCPRKBbEJ3PhOldtiATBVn8HHd3GlkWS-vo2zh6GAe37utLD8v9UY1VPwrVA74gVZIXX5TLF1uEg_3HE-GTJzzfkLmqHSZDAoBf3XmNX-DJ_Z1FJw9djs"/>
+</div>
+<div class="flex items-center gap-2 mb-1">
+<span class="text-xl">🇯🇵</span>
+<h4 class="font-label-md text-label-md">Japan</h4>
+</div>
+<p class="font-label-sm text-label-sm text-on-secondary-fixed-variant">Last Visited: May 2023</p>
+</div>
+<!-- India Card -->
+<div class="flex-shrink-0 w-64 bg-surface rounded-2xl border border-surface-variant p-4 sun-kissed-shadow">
+<div class="h-32 rounded-xl overflow-hidden mb-4 relative">
+<img alt="Agra, India" class="w-full h-full object-cover" data-alt="A majestic, symmetrical view of the Taj Mahal during sunrise. The marble reflects soft hues of gold and orange, and the surrounding gardens are lush and green. The style is professional and elegant, emphasizing the architectural precision and cultural significance within a warm, sand-toned lighting environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKPrzVY6tnYLp1R_caVjq28BW8TIcDfqM-8jMi5_lnEWnX1TVeRRDUui853Ceyjpzja68ZxXycyYmsb-z6dM6yYTt4P-liwz9Jk-5BCxLPIgHrjefkQg7kGIgSC1mHAAxouTu5f6xMB0GoDSsH9Tfww6C2z3EBkUOMkvw6YjHeeVU3FNQC374zgEriLfYDN-UrmEFTS8Ssowze_8jo9DZRX38ZGP7HRLCHUAOCenGiED1PI7kgf5HeBtEFQcSR9Fx2I-6HU4QJdh4"/>
+</div>
+<div class="flex items-center gap-2 mb-1">
+<span class="text-xl">🇮🇳</span>
+<h4 class="font-label-md text-label-md">India</h4>
+</div>
+<p class="font-label-sm text-label-sm text-on-secondary-fixed-variant">Last Visited: Jan 2024</p>
+</div>
+<!-- Greece Card -->
+<div class="flex-shrink-0 w-64 bg-surface rounded-2xl border border-surface-variant p-4 sun-kissed-shadow">
+<div class="h-32 rounded-xl overflow-hidden mb-4 relative">
+<img alt="Santorini, Greece" class="w-full h-full object-cover" data-alt="An iconic white-washed building with a vibrant blue dome in Santorini, Greece, overlooking the deep blue Aegean Sea. The bright daylight creates a crisp, high-contrast look, perfectly matching the modern editorial travel journal style. The mood is tranquil, aspirational, and deeply Mediterranean." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBm7tjIaArCmXJ4RK6Sy8lpaSWSm_f5AyBHw_StIijBsMXmaQ98kblT_1fHqipvvtN6ZZB9BRLdOjStzggB2UP0gyWE7q2VeAS8v5FXZ3BqZWfBYreMSiTZif9T3NFN8zd2los14OOGawwlCdclYKsZCv7Hhxom1GjkiJe_0rzFFmBfe5-LiPo0fVsQLZX3LuBIhP7JJc9iB9AIIHA0mYSOWY8AznJ654CY2gOP09WhjnMZ5QPyq8cwH2NnfvBsYBH7SkqeUcsQ-2s"/>
+</div>
+<div class="flex items-center gap-2 mb-1">
+<span class="text-xl">🇬🇷</span>
+<h4 class="font-label-md text-label-md">Greece</h4>
+</div>
+<p class="font-label-sm text-label-sm text-on-secondary-fixed-variant">Last Visited: Sep 2022</p>
+</div>
+</div>
+</section>
+<!-- Milestones Section -->
+<section class="border-t border-surface-variant pt-10">
+<h2 class="font-headline-md text-headline-md mb-8">Unlocked Milestones</h2>
+<div class="flex flex-wrap gap-10 items-center justify-center py-6 bg-surface-container/50 rounded-3xl border border-dashed border-outline-variant">
+<!-- Badge 1 -->
+<div class="flex flex-col items-center gap-3">
+<div class="w-20 h-20 rounded-full bg-secondary-fixed flex items-center justify-center border-4 border-white shadow-md">
+<span class="material-symbols-outlined text-primary scale-150">flight_takeoff</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">First Flight</span>
+</div>
+<!-- Badge 2 -->
+<div class="flex flex-col items-center gap-3">
+<div class="w-20 h-20 rounded-full bg-secondary-fixed flex items-center justify-center border-4 border-white shadow-md">
+<span class="material-symbols-outlined text-primary scale-150">location_on</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">10 Countries</span>
+</div>
+<!-- Badge 3 -->
+<div class="flex flex-col items-center gap-3">
+<div class="w-20 h-20 rounded-full bg-primary-container flex items-center justify-center border-4 border-white shadow-md">
+<span class="material-symbols-outlined text-white scale-150">public</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">Globetrotter</span>
+</div>
+<!-- Badge 4 -->
+<div class="flex flex-col items-center gap-3">
+<div class="w-20 h-20 rounded-full bg-secondary-fixed flex items-center justify-center border-4 border-white shadow-md">
+<span class="material-symbols-outlined text-primary scale-150">photo_library</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Memory Maker</span>
+</div>
+<!-- Badge 5 -->
+<div class="flex flex-col items-center gap-3">
+<div class="w-20 h-20 rounded-full bg-secondary-fixed flex items-center justify-center border-4 border-white shadow-md opacity-50 grayscale">
+<span class="material-symbols-outlined text-primary scale-150">directions_car</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Road Warrior</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Right Stats Panel -->
+<aside class="w-80 h-screen fixed right-0 top-0 bg-surface-container border-l border-surface-variant p-8 flex flex-col gap-8 overflow-y-auto">
+<div>
+<h2 class="font-label-md text-label-md uppercase tracking-[0.2em] text-on-secondary-fixed-variant mb-6">Travel Explorer</h2>
+<!-- Circular Progress -->
+<div class="relative flex flex-col items-center mb-8">
+<div class="w-48 h-48 rounded-full border-[12px] border-secondary-fixed relative flex flex-col items-center justify-center">
+<!-- Progress Fill (SVG circle) -->
+<svg class="absolute inset-[-12px] w-[calc(100%+24px)] h-[calc(100%+24px)] -rotate-90">
+<circle cx="50%" cy="50%" fill="transparent" r="96" stroke="#f87060" stroke-dasharray="603" stroke-dashoffset="560" stroke-linecap="round" stroke-width="12"></circle>
+</svg>
+<div class="text-center z-10">
+<span class="block font-display-lg text-display-lg leading-tight text-primary">14/195</span>
+<span class="font-label-sm text-label-sm text-on-secondary-fixed-variant">Countries Visited</span>
+</div>
+</div>
+</div>
+<!-- Mini Stats Row -->
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="bg-surface p-4 rounded-2xl border border-surface-variant">
+<span class="block font-label-sm text-label-sm text-on-secondary-fixed-variant mb-1">Continents</span>
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md text-primary">3</span>
+<span class="font-label-md text-label-md text-on-surface">/ 7</span>
+</div>
+</div>
+<div class="bg-surface p-4 rounded-2xl border border-surface-variant">
+<span class="block font-label-sm text-label-sm text-on-secondary-fixed-variant mb-1">Yearly Avg</span>
+<div class="flex items-center gap-1">
+<span class="font-headline-md text-headline-md text-primary">3</span>
+<span class="font-label-md text-label-md text-on-surface">trips</span>
+</div>
+</div>
+</div>
+<!-- Progress Bars -->
+<div class="space-y-6 mb-10">
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-label-md text-label-md">Bucket List Progress</span>
+<span class="font-label-sm text-label-sm text-primary">8 Items Left</span>
+</div>
+<div class="h-2 w-full bg-secondary-fixed rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[40%]"></div>
+</div>
+</div>
+</div>
+<!-- Active Quests -->
+<section>
+<h3 class="font-label-md text-label-md uppercase tracking-wider text-on-secondary-fixed-variant mb-4">Active Quests</h3>
+<div class="space-y-3">
+<div class="flex items-center gap-4 p-3 bg-surface rounded-xl border border-surface-variant hover:border-primary-container transition-colors group cursor-pointer">
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-tertiary">terrain</span>
+</div>
+<div>
+<p class="font-label-md text-label-md">Alpine Ascender</p>
+<p class="text-[11px] text-on-secondary-fixed-variant font-medium">Summit 3 major ranges (1/3)</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-3 bg-surface rounded-xl border border-surface-variant hover:border-primary-container transition-colors group cursor-pointer">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary">beach_access</span>
+</div>
+<div>
+<p class="font-label-md text-label-md">Island Hopper</p>
+<p class="text-[11px] text-on-secondary-fixed-variant font-medium">Visit 5 archipelagos (2/5)</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</aside>
+<script>
+        // Simple interactivity for map path hover states or clicking cards
+        document.querySelectorAll('path').forEach(path => {
+            path.addEventListener('mouseenter', () => {
+                path.style.filter = 'drop-shadow(0 0 5px rgba(248, 112, 96, 0.4))';
+            });
+            path.addEventListener('mouseleave', () => {
+                path.style.filter = 'none';
+            });
+        });
+    </script>
+</body></html>

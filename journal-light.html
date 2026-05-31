@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>wndrly — Kyoto Autumn Reflections</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-primary": "#ffb4a9",
+                      "on-secondary-container": "#69635e",
+                      "secondary-fixed-dim": "#cdc5be",
+                      "on-primary-fixed": "#410001",
+                      "on-secondary-fixed-variant": "#4b4641",
+                      "surface-container-highest": "#e9e1d8",
+                      "on-tertiary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "inverse-surface": "#34302a",
+                      "error-container": "#ffdad6",
+                      "outline": "#8b716d",
+                      "primary-fixed": "#ffdad5",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-container": "#003a2e",
+                      "on-primary": "#ffffff",
+                      "surface-container-high": "#efe7dd",
+                      "primary": "#a9362b",
+                      "surface-variant": "#e9e1d8",
+                      "secondary-fixed": "#eae1da",
+                      "on-secondary-fixed": "#1f1b17",
+                      "background": "#fff8f2",
+                      "outline-variant": "#dfbfbb",
+                      "tertiary": "#006b57",
+                      "surface-bright": "#fff8f2",
+                      "on-error-container": "#93000a",
+                      "tertiary-fixed-dim": "#54dcbb",
+                      "on-primary-container": "#6a0505",
+                      "surface-dim": "#e1d9d0",
+                      "on-surface": "#1e1b16",
+                      "secondary-container": "#eae1da",
+                      "on-background": "#1e1b16",
+                      "on-tertiary-fixed-variant": "#005141",
+                      "inverse-on-surface": "#f8efe6",
+                      "surface-container-low": "#fbf2e9",
+                      "tertiary-container": "#00ae8f",
+                      "on-primary-fixed-variant": "#881e17",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary-fixed": "#002019",
+                      "secondary": "#635d58",
+                      "on-surface-variant": "#58413e",
+                      "primary-fixed-dim": "#ffb4a9",
+                      "error": "#ba1a1a",
+                      "surface": "#fff8f2",
+                      "surface-container": "#f5ede3",
+                      "surface-tint": "#a9362b",
+                      "tertiary-fixed": "#74f9d6",
+                      "primary-container": "#f87060"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "max-width": "1280px",
+                      "margin-desktop": "64px",
+                      "margin-mobile": "20px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "body-md": ["Source Serif 4"],
+                      "body-lg": ["Source Serif 4"],
+                      "label-sm": ["Plus Jakarta Sans"],
+                      "headline-md": ["Plus Jakarta Sans"],
+                      "display-lg": ["Plus Jakarta Sans"],
+                      "display-lg-mobile": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                      "headline-md": ["24px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                      "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "0.04em", "fontWeight": "600"}],
+                      "display-lg-mobile": ["36px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fdf8f2;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .entry-hover {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .entry-card:hover .entry-hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="text-on-background antialiased hide-scrollbar">
+<!-- SideNavBar (Shared Component Identity) -->
+<nav class="h-screen w-64 fixed left-0 top-0 bg-surface-container-low border-r border-outline-variant/20 flex flex-col py-margin-desktop px-gutter justify-between z-50">
+<div>
+<div class="font-display-lg text-display-lg font-semibold text-primary mb-8">wndrly</div>
+<div class="space-y-4">
+<!-- Journey Active -->
+<a class="flex items-center gap-4 text-primary font-bold border-l-2 border-primary pl-4 duration-300 ease-in-out group" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-sm text-label-sm uppercase tracking-[0.2em]">Journey</span>
+</a>
+<a class="flex items-center gap-4 text-secondary pl-4 hover:text-on-surface hover:bg-surface-variant/50 transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="photo_library">photo_library</span>
+<span class="font-label-sm text-label-sm uppercase tracking-[0.2em]">Gallery</span>
+</a>
+<a class="flex items-center gap-4 text-secondary pl-4 hover:text-on-surface hover:bg-surface-variant/50 transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-label-sm text-label-sm uppercase tracking-[0.2em]">Map</span>
+</a>
+<a class="flex items-center gap-4 text-secondary pl-4 hover:text-on-surface hover:bg-surface-variant/50 transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+<span class="font-label-sm text-label-sm uppercase tracking-[0.2em]">Favorites</span>
+</a>
+</div>
+</div>
+<div class="space-y-6">
+<button class="w-full bg-primary text-on-primary py-3 rounded-lg font-label-sm text-label-sm uppercase tracking-widest hover:opacity-90 transition-opacity">
+                Add Entry
+            </button>
+<div class="pt-6 border-t border-outline-variant/20">
+<a class="flex items-center gap-4 text-secondary pl-4 hover:text-on-surface transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-sm text-label-sm uppercase tracking-[0.2em]">Settings</span>
+</a>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="ml-64 min-h-screen px-margin-desktop py-margin-desktop max-w-[1400px]">
+<!-- Header Section -->
+<header class="flex justify-between items-end mb-16 gap-gutter">
+<div class="max-w-2xl">
+<p class="font-label-sm text-label-sm text-secondary uppercase mb-2">Oct 15 — Oct 22, 2023</p>
+<h1 class="font-display-lg text-display-lg text-on-background">Kyoto Autumn Reflections</h1>
+<p class="font-body-lg text-body-lg text-secondary mt-4 italic">A week immersed in the changing maples, temple bells at dawn, and the quiet ritual of tea.</p>
+</div>
+<!-- Map Widget -->
+<div class="w-48 h-48 bg-surface-container-high rounded-xl overflow-hidden shadow-sm relative border border-outline-variant/30 group cursor-pointer">
+<img class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" data-alt="A stylized aerial minimalist map view of Kyoto, Japan, rendered in a warm cream and charcoal palette to match a high-end travel magazine aesthetic. The lighting is soft and even, highlighting the grid-like streets and the lush green mountain peripheries. Small, elegant coral-colored dots mark points of interest across the city landscape." data-location="Kyoto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCipVkdVYnHTlahHRxS99pMJqZbX_QyxthxN2PorCJ21I8tCDYVjHRJXIQ2TMvtaDzMz0xDnp2hE6GeEfYTjKJYg-_Z8rcb9i0qIA8JVpKzVG0HZjvHEMNUTHV364f2m7WSWlI3XdO1Of3CvzMdju-W0-Y95tIvjTE9fLBpH7k7BDPK7tBLaBjq9T9kXn8cC2woYs3bdXxIODrQxm2ZK1_VGpLDIsuaAVq9NSz130qehKEmhHQhGk6IKQa2GlZTFvIohBj4b7KjAHg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent"></div>
+<div class="absolute bottom-3 left-3 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary" data-icon="location_on">location_on</span>
+<span class="font-label-sm text-[10px] uppercase tracking-widest text-on-surface">Live Map</span>
+</div>
+</div>
+</header>
+<!-- Journal Content Grid -->
+<div class="grid grid-cols-12 gap-y-16 gap-x-gutter">
+<!-- Entry 1: Full-width Editorial -->
+<article class="col-span-12 group entry-card">
+<div class="grid grid-cols-12 gap-gutter items-center">
+<div class="col-span-7 overflow-hidden rounded-xl bg-surface-container shadow-sm aspect-[16/10]">
+<img class="w-full h-full object-cover entry-hover" data-alt="A cinematic, wide-angle photograph of Kinkaku-ji, the Golden Pavilion, at dawn during the autumn season. The golden structure is perfectly reflected in the still pond surrounding it. Warm, soft morning light hits the gold leaf, creating a majestic glow against the backdrop of deep green and fiery red maple trees. The mood is serene and deeply contemplative." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwSGp7ra3yDjwSR08y57ERBV6PL2jnGSOPZT8CtiTw1nYdhky2EPUGwfQ6ux-fGH_gqRexIBZYSJgQ2g2X4GPIFU9NHQHSBXgaZEFkcNrISQ9VfAcBwcLnbEZLnpQCq0XQLUADsjE8UG2M46FE_p4aTwWXTnOp27BufTRZIMy_eQeCy2_qmU56sxDBf95N3AZBXZZlgJM7zdFzU4hW3ai2OP5LT9noD6AzVYl9ngHknzkdMzGTr-t_MdjzjYdDbBZc2ISdUtROH8s"/>
+</div>
+<div class="col-span-5 pl-8">
+<div class="flex items-center gap-3 mb-4">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full font-label-sm text-[10px] uppercase">Oct 15</span>
+<span class="text-primary font-body-md">⛩️</span>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Kyoto, Japan</span>
+</div>
+<h2 class="font-headline-md text-headline-md mb-6 leading-tight text-on-surface-variant">The Golden Pavilion at dawn</h2>
+<p class="font-body-lg text-body-lg text-on-surface mb-8 italic leading-relaxed">
+                            "The reflection in the morning light is breathtaking. There is a specific silence that only exists before the crowds arrive—a heavy, respectful quiet that makes the gold leaf feel weightless against the water's surface."
+                        </p>
+<button class="text-primary font-label-sm text-label-sm uppercase tracking-[0.2em] flex items-center gap-2 group/btn">
+                            Read Full Entry <span class="material-symbols-outlined group-hover/btn:translate-x-1 transition-transform" data-icon="arrow_right_alt">arrow_right_alt</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Entry 2: Grid Item -->
+<article class="col-span-6 group entry-card">
+<div class="overflow-hidden rounded-xl bg-surface-container shadow-sm aspect-[4/3] mb-6">
+<img class="w-full h-full object-cover entry-hover" data-alt="A close-up shot of a traditional Japanese matcha tea set on a weathered wooden table. A bowl of frothy green matcha sits next to a delicate seasonal sweet. The background shows a soft-focus view of a lush bamboo forest through a sliding shoji screen. The lighting is diffused and natural, highlighting the tactile textures of the ceramics and bamboo." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMnXbbpJIWnC0LF5ScgpDJO_21ZYgFZ1LymUL5GhHihLJBgy64ZOJ3i2PVOZZ7W6rtug4LNKMun1ML6vpUosywQqqs3Z82mput2euidTn-YHeBuSpJRZknbyUrtdYA3XQbSp4Qc9iiosP7fmkj6jRmlwbDjyPYGsBp-f7CjiX-olgVc9mg58T6kRlU68d3WcWPW7n914YW8cqMJP8icUbrFgi9c29JVTeWX8XyGJK1YGpz4xTVMhwQyL998nRVMM_Wy4R0_l1lbwI"/>
+</div>
+<div class="flex items-center gap-3 mb-3">
+<span class="font-label-sm text-[10px] text-secondary uppercase">Oct 16</span>
+<span class="text-primary">🍵</span>
+<span class="font-label-sm text-label-sm text-secondary uppercase">Arashiyama</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed max-w-md">
+                    Found a quiet tea house hidden behind the bamboo forest. The ritual of preparation felt like a meditation in motion.
+                </p>
+</article>
+<!-- Entry 3: Grid Item -->
+<article class="col-span-6 group entry-card">
+<div class="overflow-hidden rounded-xl bg-surface-container shadow-sm aspect-[4/3] mb-6">
+<img class="w-full h-full object-cover entry-hover" data-alt="A moody night photograph of a narrow street in Gion, Kyoto. Traditional wooden townhouses are illuminated by the warm, atmospheric glow of red paper lanterns. A light rain has left the cobblestones glistening, reflecting the lantern light. The composition is atmospheric and mysterious, capturing the timeless essence of old Kyoto." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANdvQw8EAXww5nP71fyLzPYy4noH-9tionpKosIued_WVkaPnSzT68gmBhLgXspVW3G7wGwjDLOVImjVCUZw2SHBhoOaq8QKra0tOGg4jzinUVwnRydCNyF-0AxxiCy239JUdlXtnkmwWyycThdKbs3SAVt4-PCpLBRJcdg1MFVZHzE6pD_JeXHKU0ssRaEr8XCXYz8qvEj4-6rLVRMOl_155VP2fiOixFlN43j9d6ClnoubFpVxTrwZcEuqi6b5UQGSRV72jZNxE"/>
+</div>
+<div class="flex items-center gap-3 mb-3">
+<span class="font-label-sm text-[10px] text-secondary uppercase">Oct 17</span>
+<span class="text-primary">🏮</span>
+<span class="font-label-sm text-label-sm text-secondary uppercase">Gion</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed max-w-md">
+                    The lantern-lit alleys of Gion at night feel like stepping back centuries. Every shadow tells a different story.
+                </p>
+</article>
+<!-- Spacer for "Digital Paper" aesthetic -->
+<div class="col-span-12 py-12 border-t border-outline-variant/20 flex flex-col items-center">
+<div class="w-1 h-1 bg-outline-variant rounded-full mb-1"></div>
+<div class="w-1 h-1 bg-outline-variant rounded-full mb-1"></div>
+<div class="w-1 h-1 bg-outline-variant rounded-full"></div>
+<p class="mt-8 font-label-sm text-label-sm text-secondary italic tracking-widest">End of October 17</p>
+</div>
+</div>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-margin-desktop right-margin-desktop w-16 h-16 bg-primary-container text-on-primary-container rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-300 z-[100] group" id="fab">
+<span class="material-symbols-outlined text-3xl" data-icon="add">add</span>
+<span class="absolute right-full mr-4 bg-on-background text-background px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">New Entry</span>
+</button>
+<script>
+        // Subtle Parallax & Reveal effects
+        window.addEventListener('scroll', () => {
+            const scroll = window.scrollY;
+            const entries = document.querySelectorAll('.entry-card');
+            
+            entries.forEach((entry, index) => {
+                const speed = 0.05;
+                const offset = entry.getBoundingClientRect().top;
+                if(offset < window.innerHeight) {
+                    // Simple reveal could be added here
+                }
+            });
+        });
+
+        // Interactive MAP widget hover logic
+        const mapWidget = document.querySelector('header div.group');
+        if(mapWidget) {
+            mapWidget.addEventListener('mouseenter', () => {
+                mapWidget.style.transform = 'translateY(-4px)';
+            });
+            mapWidget.addEventListener('mouseleave', () => {
+                mapWidget.style.transform = 'translateY(0)';
+            });
+        }
+    </script>
+</body></html>
