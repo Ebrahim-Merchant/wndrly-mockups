@@ -1,42 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>wndrly — Design Mockups Index</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <style>body { font-family: 'Inter', system-ui, sans-serif; }</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wndrly - Design Mockups</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+            font-weight: 700;
+        }
+
+        .card-content {
+            padding: 24px;
+        }
+
+        .card-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 16px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #f0f0f0;
+            border-radius: 12px;
+            font-size: 12px;
+            color: #666;
+            margin-right: 8px;
+            margin-bottom: 4px;
+        }
+
+        .tag.dark {
+            background: #333;
+            color: white;
+        }
+
+        .tag.light {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .screenshots {
+            margin-top: 60px;
+        }
+
+        .screenshots h2 {
+            color: white;
+            font-size: 32px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .screenshot-card {
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .screenshot-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .screenshot-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
 </head>
-<body class="min-h-screen bg-gray-950 text-white flex flex-col items-center justify-center p-8">
-  <div class="max-w-2xl w-full text-center">
-    <div class="text-5xl font-black mb-2">wndrly</div>
-    <div class="text-gray-400 text-lg mb-12">Design mockup index · v0.1 · Built on TREK</div>
+<body>
+    <div class="container">
+        <header>
+            <h1>✈️ Wndrly</h1>
+            <p class="subtitle">Travel Planning App - Design Mockups</p>
+        </header>
 
-    <div class="grid grid-cols-2 gap-4 text-left">
-      <a href="landing.html" class="bg-gray-800 hover:bg-gray-700 border border-white/10 rounded-2xl p-5 transition-all hover:-translate-y-1 block">
-        <div class="text-2xl mb-2">🏠</div>
-        <div class="font-bold text-white mb-1">Landing Page</div>
-        <div class="text-gray-400 text-sm">Hero, features, Japlaning CTA, partners, early access signup</div>
-      </a>
-      <a href="planner.html" class="bg-gray-800 hover:bg-gray-700 border border-white/10 rounded-2xl p-5 transition-all hover:-translate-y-1 block">
-        <div class="text-2xl mb-2">🗓️</div>
-        <div class="font-bold text-white mb-1">Trip Planner</div>
-        <div class="text-gray-400 text-sm">Day-by-day itinerary, map sidebar, affiliate widgets, budget tracker</div>
-      </a>
-      <a href="japlaning.html" class="bg-gray-800 hover:bg-gray-700 border border-white/10 rounded-2xl p-5 transition-all hover:-translate-y-1 block">
-        <div class="text-2xl mb-2">🗾</div>
-        <div class="font-bold text-white mb-1">Japlaning Hub</div>
-        <div class="text-gray-400 text-sm">Japan-themed landing, templates, Reddit/TikTok community vibe</div>
-      </a>
-      <a href="mobile.html" class="bg-gray-800 hover:bg-gray-700 border border-white/10 rounded-2xl p-5 transition-all hover:-translate-y-1 block">
-        <div class="text-2xl mb-2">📱</div>
-        <div class="font-bold text-white mb-1">Mobile Views</div>
-        <div class="text-gray-400 text-sm">Phone mockups: Home, Map view, PWA install prompt</div>
-      </a>
+        <div class="grid">
+            <a href="landing.html" class="card">
+                <div class="card-image">🏠</div>
+                <div class="card-content">
+                    <div class="card-title">Landing Page</div>
+                    <div class="card-desc">Main landing page with hero section and feature highlights</div>
+                    <span class="tag light">Light Theme</span>
+                </div>
+            </a>
+
+            <a href="dashboard.html" class="card">
+                <div class="card-image">📊</div>
+                <div class="card-content">
+                    <div class="card-title">Dashboard</div>
+                    <div class="card-desc">Main dashboard with trip overview and quick stats</div>
+                    <span class="tag dark">Dark Theme</span>
+                </div>
+            </a>
+
+            <a href="dashboard-light.html" class="card">
+                <div class="card-image">📊</div>
+                <div class="card-content">
+                    <div class="card-title">Dashboard (Light)</div>
+                    <div class="card-desc">Light theme variant of the main dashboard</div>
+                    <span class="tag light">Light Theme</span>
+                </div>
+            </a>
+
+            <a href="trip-planner.html" class="card">
+                <div class="card-image">🗓️</div>
+                <div class="card-content">
+                    <div class="card-title">Trip Planner</div>
+                    <div class="card-desc">Interactive trip planning interface with timeline</div>
+                    <span class="tag dark">Dark Theme</span>
+                </div>
+            </a>
+
+            <a href="trip-planner-light.html" class="card">
+                <div class="card-image">🗓️</div>
+                <div class="card-content">
+                    <div class="card-title">Trip Planner (Light)</div>
+                    <div class="card-desc">Light theme variant of trip planner</div>
+                    <span class="tag light">Light Theme</span>
+                </div>
+            </a>
+
+            <a href="budget-light.html" class="card">
+                <div class="card-image">💰</div>
+                <div class="card-content">
+                    <div class="card-title">Budget Tracker</div>
+                    <div class="card-desc">Track expenses and manage trip budget</div>
+                    <span class="tag light">Light Theme</span>
+                </div>
+            </a>
+
+            <a href="budget-dark.html" class="card">
+                <div class="card-image">💰</div>
+                <div class="card-content">
+                    <div class="card-title">Budget Tracker (Dark)</div>
+                    <div class="card-desc">Dark theme variant of budget tracker</div>
+                    <span class="tag dark">Dark Theme</span>
+                </div>
+            </a>
+
+            <a href="atlas-light.html" class="card">
+                <div class="card-image">🗺️</div>
+                <div class="card-content">
+                    <div class="card-title">Atlas View</div>
+                    <div class="card-desc">Interactive map with saved locations and routes</div>
+                    <span class="tag light">Light Theme</span>
+                </div>
+            </a>
+
+            <a href="journal-light.html" class="card">
+                <div class="card-image">📝</div>
+                <div class="card-content">
+                    <div class="card-title">Travel Journal</div>
+                    <div class="card-desc">Document memories and experiences</div>
+                    <span class="tag light">Light Theme</span>
+                </div>
+            </a>
+
+            <a href="journal-dark.html" class="card">
+                <div class="card-image">📝</div>
+                <div class="card-content">
+                    <div class="card-title">Travel Journal (Dark)</div>
+                    <div class="card-desc">Dark theme variant of travel journal</div>
+                    <span class="tag dark">Dark Theme</span>
+                </div>
+            </a>
+
+            <a href="japlaning.html" class="card">
+                <div class="card-image">🇯🇵</div>
+                <div class="card-content">
+                    <div class="card-title">Japan Trip Example</div>
+                    <div class="card-desc">Sample trip planning for Japan with itinerary</div>
+                    <span class="tag light">Light Theme</span>
+                </div>
+            </a>
+
+            <a href="vacay-light.html" class="card">
+                <div class="card-image">🏖️</div>
+                <div class="card-content">
+                    <div class="card-title">Vacation Mode</div>
+                    <div class="card-desc">Simplified vacation planning interface</div>
+                    <span class="tag light">Light Theme</span>
+                </div>
+            </a>
+
+            <a href="mobile.html" class="card">
+                <div class="card-image">📱</div>
+                <div class="card-content">
+                    <div class="card-title">Mobile View</div>
+                    <div class="card-desc">Mobile-optimized interface and layout</div>
+                    <span class="tag">Responsive</span>
+                </div>
+            </a>
+
+            <a href="planner.html" class="card">
+                <div class="card-image">📋</div>
+                <div class="card-content">
+                    <div class="card-title">Planner View</div>
+                    <div class="card-desc">Detailed planning interface with checklists</div>
+                    <span class="tag light">Light Theme</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="screenshots">
+            <h2>📸 Screenshots</h2>
+            <div class="screenshot-grid">
+                <div class="screenshot-card">
+                    <img src="trek-screenshots/dashboard.png" alt="Dashboard">
+                    <div class="screenshot-title">Dashboard</div>
+                </div>
+                <div class="screenshot-card">
+                    <img src="trek-screenshots/trip-planner.png" alt="Trip Planner">
+                    <div class="screenshot-title">Trip Planner</div>
+                </div>
+                <div class="screenshot-card">
+                    <img src="trek-screenshots/atlas.png" alt="Atlas">
+                    <div class="screenshot-title">Atlas</div>
+                </div>
+                <div class="screenshot-card">
+                    <img src="trek-screenshots/budget.png" alt="Budget">
+                    <div class="screenshot-title">Budget</div>
+                </div>
+                <div class="screenshot-card">
+                    <img src="trek-screenshots/journey.png" alt="Journey">
+                    <div class="screenshot-title">Journey</div>
+                </div>
+                <div class="screenshot-card">
+                    <img src="trek-screenshots/vacay.png" alt="Vacay">
+                    <div class="screenshot-title">Vacay</div>
+                </div>
+                <div class="screenshot-card">
+                    <img src="trek-screenshots/trip-iceland.png" alt="Iceland Trip">
+                    <div class="screenshot-title">Iceland Trip</div>
+                </div>
+                <div class="screenshot-card">
+                    <img src="trek-screenshots/admin.png" alt="Admin">
+                    <div class="screenshot-title">Admin Panel</div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div class="mt-8 text-gray-600 text-xs">Static HTML mockups · Tailwind CDN · Unsplash images</div>
-  </div>
 </body>
 </html>
